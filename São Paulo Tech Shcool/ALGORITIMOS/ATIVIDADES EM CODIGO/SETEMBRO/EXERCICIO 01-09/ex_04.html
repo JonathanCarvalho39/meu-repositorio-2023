@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 04</title>
+</head>
+
+<body>
+  <span>Frequência do aluno:</span><input type="number" id="input_frq_aluno"><br><br>
+  <button onclick="atualiza_foto()">
+    Analisar frequência
+  </button>
+  <div id="div_imagem"></div>
+</body>
+
+</html>
+
+<script>
+  function atualiza_foto() {
+    var frq_aluno = Number(input_frq_aluno.value)
+    if (frq_aluno < 50) {
+      div_imagem.innerHTML = `
+
+<img src="https://img.freepik.com/fotos-gratis/mulher-de-tiro-medio-posando-com-fundo-de-formatura_23-2150319892.jpg?size=626&ext=jpg&ga=GA1.2.430210750.1685760850&semt=sph">
+`
+    } else {
+      div_imagem.innerHTML = `
+<img src="https://img.freepik.com/fotos-gratis/tourist-apresentando-algo_1368-7018.jpg?w=360&t=st=1693582178~exp=1693582778~hmac=5bae613f248bc1ad5e00bf2fd7954ef29a5bb2c9637e2449116076ba3990ede4">
+`}
+
+  }
+</script>

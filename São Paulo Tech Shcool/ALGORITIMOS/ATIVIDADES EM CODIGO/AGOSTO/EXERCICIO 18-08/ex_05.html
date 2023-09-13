@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 05</title>
+</head>
+<body>
+  <Strong>Coleque sua idade:</Strong><input id="idade" type="number"><br><br>
+  <button onclick="idade_homen()">Aposentadoria Homem</button>
+  <button onclick="idade_mulher()">Aposentadoria Mulhe</button>
+
+</body>
+</html>
+
+<script>
+function idade_homen(){
+  if (idade.value >= 70) {
+    alert(`Você ja pode se aposentar!`)
+  }else(
+    alert(`Falta ${70 - idade.value} anos apara você se aposentar!`)
+  )
+  idade.value = "";
+}
+function idade_mulher() {
+  if (idade.value >= 60) {
+    alert(`Você já pode se aposentar!`)
+  }else{
+    alert(`falta ${60 - idade.value} anos para você se aposentar!`)
+  }
+  idade.value = "";
+}
+</script>

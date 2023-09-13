@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 03</title>
+</head>
+
+<body>
+  <span>Quantidade de chocolate:</span><input type="number" id="input_qnt_choco"><br><br>
+  <button onclick="val_desconto()">
+    Compra
+  </button>
+  <div id="div_result"></div>
+</body>
+
+</html>
+
+<script>
+  function val_desconto() {
+    var qnt_choco = Number(input_qnt_choco.value);
+    var unidade_choco = 3;
+    if (qnt_choco > 6) {
+      unidade_choco = 2.50;
+    }
+    div_result.innerHTML = `<br>
+    O valor da sua compra foi de ${unidade_choco * qnt_choco}
+    `
+  }
+</script>

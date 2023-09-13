@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 06</title>
+</head>
+<body>
+  <Strong>Digite o Ki base do guerreiro:</Strong><input style="width: 3.5rem;" type="number" id="input_ki"> <br><br>
+<span>Transformar em...</span><br><br>
+<button onclick="calc_tranformacao()">
+  SSJ
+</button>
+<button onclick="calc_tranformacao2()">
+  SSJ2
+</button>
+<button onclick="calc_tranformacao3()">
+  SSJ3
+</button>
+<div id="div_transformacao"></div>
+</body>
+</html>
+
+<script>
+  function calc_tranformacao() {
+    var ssj = Number(input_ki.value * 50);
+    div_transformacao.innerHTML = `<br>
+    Após se transformar em <b>SSJ</b>, o ki desse Sayajin passa a ser de ${ssj}
+    `
+  };
+  function calc_tranformacao2() {
+    var ssj2 = Number(input_ki.value * 100)
+    div_transformacao.innerHTML = `<br>
+    Após se transformar em <b>SSJ2</b>, o ki desse Sayajin passa a ser de ${ssj2}
+    `
+  };
+  function calc_tranformacao3() {
+    var ssj3 = Number(input_ki.value * 200)
+    div_transformacao.innerHTML = `<br>
+    Após se transformar em <b>SSJ3</b>, o ki desse Sayajin passa a ser de ${ssj3}
+    `
+  };
+</script>

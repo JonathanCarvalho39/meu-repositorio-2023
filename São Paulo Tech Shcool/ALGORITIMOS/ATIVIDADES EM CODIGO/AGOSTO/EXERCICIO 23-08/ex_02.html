@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 02</title>
+</head>
+<body>
+<strong>Quantidade de votos do primeiro candidato:</strong><input style="width: 3.5rem;" type="number"  id="input_voto_1"><br><br>
+<Strong>Quantidade de votos do segundo candidato:</Strong><input style="width: 3.5rem;" type="number" id="input_voto_2"><br><br>
+<strong>Votos bracos:</strong><input style="width: 3.5rem;" type="number" id="input_voto_branco"><br><br>
+<strong>Votos nulos:</strong><input style="width: 3.5rem;" type="number" id="input_voto_nulo"><br><br>
+<button onclick="calc_votos()">Resultado da eleição</button>
+<div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function calc_votos() {
+  var candidato1 = Number(input_voto_1.value);
+  var candidato2 = Number(input_voto_2.value);
+  var voto_invalido = Number(input_voto_branco.value) + Number(input_voto_nulo.value);
+  var total_voto = candidato1 + candidato2 + voto_invalido;
+
+  resultado.innerHTML =
+  `<br>
+    Total de votos: <u>${total_voto}</u> <br>
+    Candidato A: ${(candidato1 * 100 / total_voto).toFixed(2)}% (${candidato1} votos)<br>
+    Candidato B: ${(candidato2 * 100 / total_voto).toFixed(2)}% (${candidato2}
+    votos)<br>
+    Inválidos: ${(voto_invalido * 100 / total_voto).toFixed(2)}% (${voto_invalido} votos)`
+}
+
+</script>

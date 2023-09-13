@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 06</title>
+</head>
+
+<body>
+  <span>Temepratura do ambiente:</span><input type="number" id="temp_ambiente"><br><br>
+  <button onclick="ver_temp()">
+    Verificar clima
+  </button>
+  <div id="div_imagem"></div>
+  <img src="">
+</body>
+
+</html>
+<script>
+  function ver_temp() {
+    var temp = Number(temp_ambiente.value);
+    if (temp < 10) {
+      div_imagem.innerHTML = `<img src="https://www.nordestesaude.com.br/content/files/medium_conteudo-frutas-principais-nutrientes-e-vitaminas-para-uma-alimenta%C3%A7%C3%A3o-saud%C3%A1vel.jpg">`
+    } else {
+      div_imagem.innerHTML = `<img src="https://envato-shoebox-0.imgix.net/03c7/d44e-fbaf-474e-ab17-6ae6aa83c00f/oranges-kids-natural-1242.JPG?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=700&s=d6f162851529ae157c0e3fd37a95a334">`
+    }
+  }
+</script>

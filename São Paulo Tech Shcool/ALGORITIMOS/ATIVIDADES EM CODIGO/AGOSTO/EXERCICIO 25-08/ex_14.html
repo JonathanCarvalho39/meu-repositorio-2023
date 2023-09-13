@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 14</title>
+</head>
+
+<body>
+  <span>Nome do passageiro:</span><input type="text" id="input_passageiro"><br><br>
+  <span>Km da viagem:</span><input type="number" id="input_km"><br><br>
+  <span>Bandeira da viagem (1,2 ou 3):</span><input type="number" id="input_bandeira"><br><br>
+  <span>Hora da corrida (24h):</span><input type="number" id="input_hora"><br><br>
+  <button onclick="add()">
+    Calcular corrida
+  </button>
+  <div id="result_div"></div>
+
+
+
+</body>
+
+</html>
+
+<script>
+  function add() {
+    var nome = input_passageiro.value;
+    var bandeira = Number(input_bandeira.value);
+    var km = Number(input_km.value);
+    var hora_viagem = Number(input_hora.value);
+    var valor = km * 1.25;
+
+    if (bandeira == 1) {
+
+    }
+
+    if (bandeira == 1) {
+      if (hora_viagem >= 7) {
+        if (hora_viagem <= 12) {
+          valor = valor + (valor * 0.10)
+        }
+      }
+    }
+    if (bandeira == 1) {
+      if (hora_viagem >= 13) {
+        if (hora_viagem <= 23) {
+        }
+      }
+    }
+
+    result_div.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá ${km} km e o total da corrida será de ${valor} `
+  }
+</script>

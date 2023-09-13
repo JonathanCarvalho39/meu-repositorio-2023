@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prova algoritmos</title>
+</head>
+
+<body>
+  <span>Quantidade de energia em kWh:</span><input type="number" id="input_kwh"><br><br>
+  <span>Bandeira da tarifa(vermelha,amarela ou verde):</span><input type="text" id="input_bandeira"><br><br>
+  <span>Volume de agua consumidos (litros):</span><input type="number" id="input_agua"><br><br>
+  <span>Quantidade de vazamento na casa (litros):</span><input type="number" id="input_vazamento"><br><br>
+  <span>Consumo de Gás (litros):</span><input type="number" id="input_gas"><br><br>
+  <span>Valor do plano de internet:</span><input type="number" id="input_internet"><br><br>
+  <span>A vinculo de linha telefocica a internet (sim/nao):</span><input type="text" id="input_vinculo"><br><br>
+  <button onclick="Calc_despesa()">
+    Calcular despesas fixas
+  </button><br><br>
+  <div id="div_result"></div>
+</body>
+
+</html>
+<script>
+  function Calc_despesa() {
+    var qntkwh = Number(input_kwh.value);
+    var bandeira = input_bandeira.value;
+    var consumo_agua = Number(input_agua.value);
+    var vazamento = Number(input_vazamento.value);
+    var consumo_gas = Number(input_gas.value);
+    var internet = Number(input_internet.value);
+    var vinculo = input_vinculo.value;
+    var valor_luz;
+    var valor_agua = consumo_agua * 3.50;
+    var valor_gas = consumo_gas * 2.50;
+    var conta_telefone = internet;
+
+
+    if (bandeira == "verde") {
+      var valor_luz = qntkwh * 0.75;
+    }
+    if (bandeira == "amarela") {
+      var valor_luz = qntkwh * 0.90;
+    }
+    if (bandeira == "vermelha") {
+      var valor_luz = qntkwh * 1.00;
+    }
+
+    if (qntkwh <= 50) {
+      valor_luz = valor_luz - (valor_luz * 0.10)
+    }
+    if (vazamento >= 1) {
+      valor_agua = valor_agua + (10 * vazamento);
+    }
+
+    if (vinculo == "sim") {
+      conta_telefone = internet + (internet * 0.25)
+    }
+
+    div_result.innerHTML = `
+    Com o consumo de <b>${qntkwh}</b> kWh na bandeira <b>${bandeira}</b>, a conta de energia totaliza R$ <b>${valor_luz}</b>.
+
+    Com o consumo de <b>${consumo_agua}</b> litros de água contendo <b>${vazamento}</b> vazamentos e a taxa de saneamento, a conta de água totaliza R$ <b>${valor_agua}</b>.
+
+    Com o consumo de <b>${consumo_gas}</b> metros cúbicos de gás, a conta de gás totaliza R$ <b>${valor_gas}</b>.
+
+    Com um valor base de R$ <b>${internet}</b> no plano de internet , a conta de internet/  telefone totaliza R$ <b>${conta_telefone}</b>.
+
+    Gasto total de despesas mensal: R$ <b>${valor_agua + valor_gas + valor_luz + conta_telefone}</b>.
+`
+  }
+</script>

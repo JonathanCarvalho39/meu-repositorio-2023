@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 04</title>
+</head>
+<body>
+<Strong>Digite o nome da rua/avenida/vila:</Strong><input id="street_name" type="text"><br><br>
+<Strong id="house">digite o numero da casa:</Strong><input id="house_number" type="number">
+<br><br>
+<button onclick="message()">Onde eu moro</button>
+</body>
+</html>
+<script>
+  function message() {
+    alert(`Seu logradouro é ${street_name.value}`);
+    alert(`O número do seu logradouro é ${house_number.value}`);
+    street_name.value = "";
+    house_number.value = "";
+  }
+</script>

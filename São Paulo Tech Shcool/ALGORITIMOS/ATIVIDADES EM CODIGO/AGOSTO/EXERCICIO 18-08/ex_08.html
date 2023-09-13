@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 08</title>
+</head>
+<body>
+<Strong>Nome:</Strong><input id="nome" type="text">
+<br><br>
+<Strong>Ki normal do guerreiro: </Strong><input style="width: 3.5rem;" id="ki" type="number">
+<br><br>
+<button onclick="ki_multiplicado()">Ver ki em cada forma</button>
+</body>
+</html>
+
+<script>
+  function ki_multiplicado() {
+    alert(`O nivel do Ki do guerreiro ${nome.value} em forma de Super Sayajin é ${ki.value * 50}`)
+    alert(`O nivel do Ki do guerreiro ${nome.value} em forma de Super Sayajin é ${ki.value * 100}`)
+  }
+</script>

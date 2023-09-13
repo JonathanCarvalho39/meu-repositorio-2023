@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula</title>
+</head>
+
+<body>
+  <h1>Validação de votação</h1>
+  <Strong>Idade:</Strong> <input style="width: 3.5rem;" type="text" id="input_idade"><br><br>
+  <button onclick="analisar()">Analizar Idade</button>
+</body>
+
+</html>
+
+<script>
+  function analisar() {
+    var idade = Number(input_idade.value);
+    if (idade >= 16) {
+      alert("Você pode votar!");
+    }
+    if (idade < 16) {
+      alert("Você não pode votar!");
+    }
+  }
+</script>

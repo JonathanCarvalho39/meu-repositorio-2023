@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 04_a</title>
+</head>
+
+<body>
+  <strong>Valor da pizza:</strong><input style="width: 3.5rem;" type="number" id="valor_pizza"><br><br>
+  <strong>Quantidade de amigos:</strong><input style="width: 3.5rem;" type="number" id="input_qnt_amigos"><br><br>
+  <button onclick="calc_valor()">
+    Rola a pizza?
+  </button><br>
+  <div id="div_mensagem"></div>
+  <div style="color: red;" id="div_amigos"></div>
+</body>
+
+</html>
+<script>
+  function calc_valor() {
+    var valor_dividido = (Number(valor_pizza.value) / Number(input_qnt_amigos.value)).toFixed(2);
+    div_mensagem.innerHTML = `<br>Cada amigo vai pagar R$${valor_dividido} pela pizza`;
+    if (valor_dividido > 20) {
+      div_amigos.innerHTML = `<br><b><i>Deu ruim! Pizza muito cara!</i></b>`;
+    }
+    if (valor_dividido <= 20) {
+      div_amigos.innerHTML = ``;
+    }
+  }
+</script>

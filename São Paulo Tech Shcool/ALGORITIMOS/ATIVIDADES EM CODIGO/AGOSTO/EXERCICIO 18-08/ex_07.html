@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 07</title>
+</head>
+<body>
+  <Strong>Digite o valor integral da passagem:</Strong><input style="width: 3.5rem;" id="pass_value" type="number">
+  <br><br>
+  <Strong>Digite quantas viagens você fara por mês</Strong><input style="width: 3.5rem;" id="quant_viagem" type="number">
+  <br><br>
+
+  <button onclick="calc_pass()">Ver economia</button>
+
+
+</body>
+</html>
+
+<script>
+  function calc_pass() {
+    alert(`Você economizará R$${(pass_value.value * quant_viagem.value) / 2} por mês`)
+    pass_value.value = "";
+    quant_viagem.value = "";
+  }
+</script>

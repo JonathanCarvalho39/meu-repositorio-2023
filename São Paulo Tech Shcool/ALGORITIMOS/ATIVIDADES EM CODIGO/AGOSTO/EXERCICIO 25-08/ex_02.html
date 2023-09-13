@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 02</title>
+</head>
+
+<body>
+  <h3>Refri por ano</h3>
+  <strong>Quantas latas de refri consome por dia:</strong><input style="width: 3.5rem" type="number"
+    id="input_refri_dia"><br><br>
+  <button onclick="calc_refri()">Quantos refris?</button>
+  <div id="div_mensagem"></div>
+  <div id="div_resultado"></div>
+</body>
+
+</html>
+<script>
+  function calc_refri() {
+    var refri_ano = Number(input_refri_dia.value) * 365;
+    div_mensagem.innerHTML = `<br>Você consome ${refri_ano} refri por ano`;
+    if (refri_ano >= 500) {
+      div_resultado.innerHTML = `<br>Cuidado com a diabetes!`;
+    }
+    if (refri_ano < 500) {
+      div_resultado.innerHTML = ``;
+    }
+  }
+</script>

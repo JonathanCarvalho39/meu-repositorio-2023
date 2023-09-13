@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 01</title>
+</head>
+<body>
+  <Strong>Digite sua Cidade Natal:</Strong><input id="city" type="text"> <br><br>
+  <Strong>Selecione sua data de nascimento: </Strong><input id="birth_date" type="date"><br><br>
+<button onclick="cadastro()">Cadastrar</button>
+
+</body>
+</html>
+
+<script>
+  function cadastro() {
+    alert(
+        `Você nasceu na cidade de ${city.value} em ${birth_date.value}`
+    );
+    city.value = "";
+    birth_date.value = "";
+  }
+
+</script>

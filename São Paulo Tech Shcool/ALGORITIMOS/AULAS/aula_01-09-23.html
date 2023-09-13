@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 8</title>
+</head>
+
+<body>
+  <span>nota 1:</span><input type="number" id="nota1"><br><br>
+  <span>nota 2:</span><input type="number" id="nota2"><br><br>
+  <button onclick="calc_media()">
+    Verificar
+  </button>
+  <div id="div"></div>
+
+</body>
+
+</html>
+
+<script>
+
+  function calc_media() {
+    var n1 = Number(nota1.value);
+    var n2 = Number(nota2.value);
+    var media = (n1 + n2) / 2;
+    if (media >= 6) {
+      div.innerHTML = `
+      Aprovado
+      `
+    } else {
+      div.innerHTML = `
+      Reprovado
+      `
+    }
+  }
+</script>

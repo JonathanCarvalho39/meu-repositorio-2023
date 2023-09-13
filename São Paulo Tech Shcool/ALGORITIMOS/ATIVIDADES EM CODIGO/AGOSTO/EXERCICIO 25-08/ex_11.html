@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 11</title>
+</head>
+
+<body>
+  <span>Quantidade de filhos:</span><input type="number" id="input_qnt_filho"><br><br>
+  <button onclick="analisar()">
+    Analisar família
+  </button><br>
+  <div id="result_div">
+  </div>
+</body>
+
+</html>
+
+<script>
+  function analisar() {
+    var qnt_filho = Number(input_qnt_filho.value);
+    if (qnt_filho >= 1) {
+      result_div.innerHTML = `<br>Não tem TV`
+    }
+    if (qnt_filho >= 2) {
+      result_div.innerHTML += `<br>Não tem internet `
+    }
+    if (qnt_filho >= 3) {
+      result_div.innerHTML += `<br>Não tem video game  `
+    }
+    if (qnt_filho >= 4) {
+      result_div.innerHTML += `<br>Não tem Netflix  `
+    }
+  }
+</script>

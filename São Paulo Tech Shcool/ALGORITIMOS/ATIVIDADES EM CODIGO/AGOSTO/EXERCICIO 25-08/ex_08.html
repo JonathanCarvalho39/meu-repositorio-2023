@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 08</title>
+</head>
+
+<body>
+  <span>Digite a quantidade de homens no elevador:</span><input type="number
+  " id="qnt_homem"><br><br>
+  <span>Digite a quantidade de mulheres no elevador:</span><input type="number
+  " id="qnt_mulher"><br><br>
+  <button onclick="calc_peso()">
+    Analizar peso
+  </button><br>
+  <div id="result_peso"></div>
+
+</body>
+
+</html>
+<script>
+  function calc_peso() {
+    var peso_estimado = Number(qnt_homem.value) * 80 + Number(qnt_mulher.value) * 60;
+    result_peso.innerHTML = `<br>
+    Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${peso_estimado}
+    `
+    if (peso_estimado > 800) {
+      result_peso.innerHTML += `<br>
+    <span style="color: blue">Será necessário descer alguém para que o elevador se movimente</span>
+    `
+    }
+  }
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 02</title>
+</head>
+<body>
+<Strong>Digite seu peso:</Strong><input id="weight" type="number"><br><br>
+<Strong>Digite sua altura:</Strong><input id="height" type="number"><br><br>
+
+<button onclick="message()">Fale comigo</button>
+
+</body>
+</html>
+
+<script>
+function message() {
+alert(`Você pesa ${weight.value} kilos e tem ${height.value} de altura`);
+weight.value = "";
+height.value = "";
+}
+</script>

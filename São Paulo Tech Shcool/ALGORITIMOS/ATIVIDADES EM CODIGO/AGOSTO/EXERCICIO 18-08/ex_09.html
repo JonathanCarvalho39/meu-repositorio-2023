@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 09</title>
+</head>
+<body>
+<Strong>Nota da avaliação continuada:</Strong><input style ="width: 3.5rem" id="continuada" type="text"><br><br>
+<Strong>Nota da avaliação semestral:</Strong><input id="semestral" style ="width: 3.5rem;" type="number">
+<br><br>
+<Strong>Digite o nome do aluno:</Strong><input id="nome" type="text">
+<br><br>
+<button onclick="calc_media()">Calcular média</button>
+</body>
+</html>
+
+<script>
+  function calc_media() {
+      alert(`A média de ${nome.value} será de ${((Number(continuada.value) * 0.4) + (Number(semestral.value) * 0.6))}`)
+  }
+</script>

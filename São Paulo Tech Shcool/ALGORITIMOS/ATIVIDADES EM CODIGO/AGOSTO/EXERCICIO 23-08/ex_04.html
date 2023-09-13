@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 04</title>
+</head>
+<body>
+<Strong>Digite o sabor da pizza:</Strong><input type="text" id="input_nome_pizza"><Strong style="margin-left: 1rem;">Preço:</Strong><input style="width: 3.5rem;" type="number" id="input_preco_pizza"><br><br>
+<Strong>Quantidade de amigos:</Strong><input style="width: 3.5rem;" type="number" id="input_qntAmigos">
+<br><br>
+<button onclick="calc_amigo()">
+  Ver valor por amigo
+</button><br>
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+function calc_amigo() {
+  var preco_pizza = Number(input_preco_pizza.value) + Number(input_preco_pizza.value * 0.10);
+  var qntAmigos = Number(input_qntAmigos.value);
+  var sabor_pizza = input_nome_pizza.value;
+
+  div_resultado.innerHTML = `
+  <br>
+  Cada amigo vai colaborar com R$${preco_pizza / qntAmigos} para a pizza de ${sabor_pizza}
+  `
+}
+</script>

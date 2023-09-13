@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 05</title>
+</head>
+
+<body>
+  <strong>Consumo KWh:</strong><input style="width: 3.5rem;" type="number" id="input_kwh"><br><br>
+  <button onclick="calc_consumo()">Calcular conta de luz</button>
+</body>
+
+</html>
+
+<script>
+  function calc_consumo() {
+    var kwh = Number(input_kwh.value);
+    var valor = kwh * 0.85;
+    if (kwh < 100 && kwh > 0) {
+      var desconto = valor * 0.10;
+      valor = valor - desconto;
+    }
+    alert(`Sua conta com desconto ficou: ${valor}`)
+  }
+</script>

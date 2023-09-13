@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 05</title>
+</head>
+<body>
+<Strong>Digite o valor do onibus:</Strong><input style="width: 3.5rem;" type="number" id="input_valor_onibus"><br><br>
+<Strong>Quantas viagens faz por mês:</Strong><input style="width: 3.5rem;" type="number" id="input_qntViagem"><br><br>
+<Strong>Digite a distacia do trabalho até a casa:</Strong><input style="width: 3.5rem;" type="number"  id="input_distancia"><br><br>
+<button onclick="calc_vt()">
+  Calcular VT
+</button>
+<div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+  function calc_vt() {
+    var calc_aplicativo = Number(input_distancia.value * 0.75);
+    var qnt_viagem_aplicativo = Number(input_qntViagem.value * 0.10);
+    var qnt_onibus = Number(input_qntViagem.value - qnt_viagem_aplicativo);
+    var custo_app = qnt_viagem_aplicativo * calc_aplicativo;
+    var custo_total = Number(qnt_onibus * input_valor_onibus.value + custo_app)
+      div_resultado.innerHTML = `
+      <br>
+      Você vai gastar R$${custo_total.toFixed(2)} por mês com transporte
+      `
+  }
+</script>
+

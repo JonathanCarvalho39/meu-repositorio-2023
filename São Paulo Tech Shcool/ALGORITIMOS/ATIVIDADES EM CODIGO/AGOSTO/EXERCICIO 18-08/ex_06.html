@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 06</title>
+</head>
+<body>
+<h1>Equipe Lantra</h1>
+<Strong>Digite o valor da pizza:</Strong><input id="pizza_value" type="number"><br><br>
+<Strong>Digite a quantidade de amigos:</Strong><input id="amount_friends" type="number">
+<br><br>
+<button onclick="calc_value()">#lovePizza</button>
+</body>
+</html>
+
+<script>
+  function calc_value() {
+alert(`Cada um dos ${amount_friends.value} amigos vai pagar R$${pizza_value.value / amount_friends.value}`)
+amount_friends.value = "";
+pizza_value.value = "";
+  }
+</script>

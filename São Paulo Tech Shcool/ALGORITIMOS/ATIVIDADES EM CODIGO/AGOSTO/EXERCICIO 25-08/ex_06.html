@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 06</title>
+</head>
+
+<body>
+  <h1>Consumo renda familiar</h1>
+  <Strong>Renda familiar:</Strong><input type="number" id="input_renda"><br>
+  <br>
+  <strong>Valor Prestação</strong><input type="number" id="input_prestacao"><br><br>
+  <button onclick="financiamento()">
+    Verificar financiamento
+  </button>
+  <div id="div_resultado"></div>
+  <div style="color: red;" id="div_resultado_negativo"></div>
+</body>
+
+</html>
+
+<script>
+  function financiamento() {
+    var consumo_renda = Number(input_prestacao.value) * 100 / Number(input_renda.value)
+    if (consumo_renda <= 30) {
+      div_resultado.innerHTML = `<br>
+      A prestação corresponde a ${consumo_renda.toFixed(2)}% da renda familiar
+`
+    }
+    if (consumo_renda > 30) {
+      div_resultado.innerHTML = `<br>
+      A prestação corresponde a ${consumo_renda.toFixed(2)}% da renda familiar
+`
+      div_resultado_negativo.innerHTML = `<br>
+      <b>Será necessário complementar a renda familiar</b>
+`}
+
+  }
+</script>

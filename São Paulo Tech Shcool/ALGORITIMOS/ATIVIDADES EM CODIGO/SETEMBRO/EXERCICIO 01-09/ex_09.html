@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 09</title>
+</head>
+
+<body>
+  <span>Qual sua meta de econimia:</span><input type="number" id="input_meta"><br><br>
+  <span>Quanto tem guardado:</span><input type="number" id="input_poupanca"><br><br>
+  <button onclick="analise()">
+    Analisar economia
+  </button><br>
+
+  <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+  function analise() {
+    var meta = Number(input_meta.value);
+    var poucanca = Number(input_poupanca.value)
+    if (meta <= poucanca) {
+      resultado.innerHTML = `<br>
+      Parabéns, meta alcançada!
+      `
+      if (meta < poucanca) {
+        resultado.innerHTML += `<br>
+        Meta ultrapassada em R$${poucanca - meta}
+        `
+      }
+    } else {
+      resultado.innerHTML = `<br>
+      Força! Ainda em busca da meta! Falta R$${meta - poucanca}
+      `
+    }
+  }
+</script>

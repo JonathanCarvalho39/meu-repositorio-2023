@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 03</title>
+</head>
+<body>
+<Strong>Digite o nome do seu time:</Strong><input id="team_name" type="text"><br><br>
+<Strong>Digite quantos mundiais ele tem:</Strong><input id="worldwide" type="number"><br><br>
+
+<button onclick="message()">Amo meu time</button>
+</body>
+</html>
+
+<script>
+  function message() {
+    alert(`O time ${team_name.value} tem ${worldwide.value} mundiais da FIFA`);
+    team_name.value = "";
+    worldwide.value = "";
+  }
+</script>
