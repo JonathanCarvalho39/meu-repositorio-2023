@@ -57,3 +57,10 @@ select a.nome as Nome_Aluno,
 		from aluno as a join empresa as e
         on idEmpresa = fkEmpresa;
         
+
+
+
+
+
+
+        

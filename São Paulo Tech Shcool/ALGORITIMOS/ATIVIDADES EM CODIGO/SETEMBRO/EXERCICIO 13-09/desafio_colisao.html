@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio Colisão</title>
+</head>
+
+<body>
+  <h3>Primeiro retangulo</h3>
+  <span>Primeira coodenada do retangulo:</span>
+  <input type="number" id="input_primeiro_objeto_x0"><br><br>
+  <span>Segunda coodenada do retangulo:</span>
+  <input type="number" id="input_Primeiro_objeto_y0"><br><br>
+  <span>Terceira coodenada do retangulo:</span>
+  <input type="number" id="input_primeiro_objeto_x1"><br><br>
+  <span>Quarta coodenada do retangulo:</span>
+  <input type="number" id="input_primeiro_objeto_y1"><br><br><br>
+  <h3>Segundo retangulo</h3>
+  <span>Primeira coodenada do retangulo:</span>
+  <input type="number" id="input_segundo_objeto_y0"><br><br>
+  <span>Segunda coodenada do retangulo:</span>
+  <input type="number" id="input_segundo_objeto_x1"><br><br>
+  <span>Terceira coodenada do retangulo:</span>
+  <input type="number" id="input_segundo_objeto_y1"><br><br>
+  <span>Quarta coodenada do retangulo:</span>
+  <input type="number" id="input_segundo_objeto_x0"><br><br>
+
+  <button onclick="ver_colisao()">
+    Verificar Colisão
+  </button>
+  <div id="div_resultado">
+
+  </div>
+</body>
+
+
+</html>
+
+<script>
+  function ver_colisao() {
+    var primeiro_ponto = Number(input_primeiro_objeto_x0.value);
+    var segundo_ponto = Number(input_primeiro_objeto_y0.value);
+    var terceiro_ponto = Number(input_primeiro_objeto_x1.value);
+    var quarto_ponto = Number(input_primeiro_objeto_y1.value);
+
+    var primeiro_ponto_obj2 = Number(input_segundo_objeto_x0.value);
+    var segundo_ponto_obj2 = Number(input_segundo_objeto_y0.value);
+    var terceiro_ponto_obj2 = Number(input_segundo_objeto_x1.value);
+    var quarto_ponto_obj2 = Number(input_segundo_objeto_y1.value);
+
+    var resultado = "Não colide";
+
+    if (segundo_ponto <= quarto_ponto_obj2) {
+      if (primeiro_ponto <= quarto_ponto_obj2) {
+        if (primeiro_ponto <= terceiro_ponto_obj2) {
+          if (primeiro_ponto <= quarto_ponto_obj2) {
+
+          }
+        }
+      }
+    }
+  }
+</script>
