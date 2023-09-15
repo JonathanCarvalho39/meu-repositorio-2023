@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 08</title>
+</head>
+
+<body>
+  <span>Quantos pães você come por dia: </span><input type="number" id="inp_qnt_pao"><br><br>
+  <span>Quandos pacotes de bolacha você come por dia: </span><input type="number" id="inp_qnt_bolacha"><br><br>
+  <span>Quantos copos de achocolatado você toma por dia: </span><input type="number" id="inp_achocolatado"><br><br>
+  <button onclick="ver_caloria()">Verificar calorias</button>
+  <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+  function ver_caloria() {
+    var qnt_pao = Number(inp_qnt_pao.value);
+    var qnt_bolacha = Number(inp_qnt_bolacha.value);
+    var qnt_achocolatado = Number(inp_achocolatado.value);
+    var caloria = qnt_achocolatado * 70 + qnt_bolacha * 80 + qnt_pao * 50;
+    if (caloria < 200) resultado.innerHTML = `<br>Parabéns, vai ficar em forma !`;
+    if (caloria >= 200) {
+      if (caloria <= 400) resultado.innerHTML = `<br>Cuidado, vai ficar menos saudável `;
+      else resultado.innerHTML = `<br>Alerta crítico de saúde !!!`;
+    }
+  }
+
+</script>

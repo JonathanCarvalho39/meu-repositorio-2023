@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>solicite um numero</title>
+</head>
+
+<body>
+  <span>Digite um numero</span><input type="number" id="inp_primeiro_numero"><br><br>
+  <button onclick="compara()">
+    comparando
+  </button><br>
+  <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+  function compara() {
+
+    var numero = Number(inp_primeiro_numero.value)
+
+    if (numero < 25) resultado.innerHTML = `<br>Numero menor que 25`;
+
+    else if (numero <= 50) resultado.innerHTML = `<br>O numero esta entre 25 e 50`;
+
+    else if (numero <= 75) resultado.innerHTML = `<br>Numero entre 50 e 75`;
+
+    else resultado.innerHTML = `<br>Maior que 75`;
+
+  }
+</script>

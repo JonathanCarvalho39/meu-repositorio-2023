@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Desafio Colisão</title>
 </head>
 
@@ -12,7 +13,7 @@
   <span>Primeira coodenada do retangulo:</span>
   <input type="number" id="input_primeiro_objeto_x0"><br><br>
   <span>Segunda coodenada do retangulo:</span>
-  <input type="number" id="input_Primeiro_objeto_y0"><br><br>
+  <input type="number" id="input_primeiro_objeto_y0"><br><br>
   <span>Terceira coodenada do retangulo:</span>
   <input type="number" id="input_primeiro_objeto_x1"><br><br>
   <span>Quarta coodenada do retangulo:</span>
@@ -30,9 +31,12 @@
   <button onclick="ver_colisao()">
     Verificar Colisão
   </button>
-  <div id="div_resultado">
-
+  <div id="div_resultado"></div>
+  <div class="linha-vertical">
+    <div class="linha1 linha2 linha3"></div>
   </div>
+  <div class="linha-horizontal"></div>
+
 </body>
 
 
@@ -52,14 +56,45 @@
 
     var resultado = "Não colide";
 
-    if (segundo_ponto <= quarto_ponto_obj2) {
-      if (primeiro_ponto <= quarto_ponto_obj2) {
-        if (primeiro_ponto <= terceiro_ponto_obj2) {
-          if (primeiro_ponto <= quarto_ponto_obj2) {
-
+    if (quarto_ponto_obj2 >= segundo_ponto) {
+      if (primeiro_ponto <= terceiro_ponto_obj2) {
+        if (quarto_ponto_obj2 <= segundo_ponto) {
+          if (primeiro_ponto >= terceiro_ponto_obj2) {
+            resultado = "Colide!"
           }
         }
       }
     }
+    if (primeiro_ponto <= primeiro_ponto_obj2) {
+      if (primeiro_ponto >= primeiro_ponto_obj2) {
+        if (segundo_ponto >= segundo_ponto_obj2) {
+          if (segundo_ponto <= segundo_ponto_obj2) {
+            resultado = "Colide!"
+          }
+        }
+      }
+    }
+    if (terceiro_ponto >= terceiro_ponto_obj2) {
+      if (terceiro_ponto <= terceiro_ponto_obj2) {
+        if (quarto_ponto >= quarto_ponto_obj2) {
+          if (quarto_ponto <= quarto_ponto_obj2) {
+            resultado = "Colide!"
+          }
+        }
+      }
+    }
+    if (primeiro_ponto >= quarto_ponto_obj2) {
+      if (primeiro_ponto <= quarto_ponto_obj2) {
+        if (segundo_ponto >= terceiro_ponto_obj2) {
+          if (segundo_ponto <= terceiro_ponto_obj2) {
+            resultado = "Colide!"
+          }
+        }
+      }
+    }
+    div_resultado.innerHTML = `${resultado}`
   }
+
+
+
 </script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 06</title>
+</head>
+
+<body>
+  <span>Qual o time que você torce: </span><input type="text" id="inp_nome_time"><br><br>
+  <button onclick="mostrar_time()">
+    Fale sobre esse time
+  </button>
+  <div id="resultado"></div>
+  <span style=" background: green; color: white;"></span>
+</body>
+
+</html>
+
+<script>
+  function mostrar_time() {
+    var time = inp_nome_time.value;
+
+    if (time == "Corinthians")
+      resultado.innerHTML = `<br><span style=" background: black; color: white;">Salve o Corinthians</span>`
+    if (time == "Palmeiras")
+      resultado.innerHTML = `<br><span style=" background: green; color: white;">Salve o alviverde imponente</span>`
+    if (time == "Santos")
+      resultado.innerHTML = `<br><span>Agora quem dá a bola é o Santos</span>`
+    if (time == "São Paulo")
+      resultado.innerHTML = `<br><span style=" background: black; color: red;">Salve o Tricolor paulista</span>`
+  }
+</script>

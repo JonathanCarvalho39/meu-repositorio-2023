@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 01</title>
+</head>
+
+<body>
+  <span>Altura: </span><input type="number" id="inp_altura"><br><br>
+  <button onclick="validar_altura()">Analisar Estatura</button>
+  <div id="resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+  function validar_altura() {
+    var altura = Number(inp_altura.value);
+
+    if (altura <= 1.65) resultado.innerHTML = `<br>Você pode ser piloto de corrida`;
+    else if (altura <= 1.80) resultado.innerHTML = `<br>Você pode ser jogador de futebol`;
+    else resultado.innerHTML = `<br>Você pode ser jogador de vôlei ou basquete`;
+  }
+</script>
