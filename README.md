@@ -1,7 +1,5 @@
 # meu-repositorio-2023
-Primeira Aula prática de Git e GitHub na SPTech!
 
-alterações no remoro
+São Paulo Tech Shool
 
-
-alterações feita direto da minha maquina!
+Estude sempre, se cansar estude mais!
