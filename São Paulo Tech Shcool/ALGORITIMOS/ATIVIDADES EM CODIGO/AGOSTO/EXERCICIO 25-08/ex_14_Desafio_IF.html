@@ -17,8 +17,6 @@
   </button>
   <div id="result_div"></div>
 
-
-
 </body>
 
 </html>
@@ -31,23 +29,11 @@
     var hora_viagem = Number(input_hora.value);
     var valor = km * 1.25;
 
-    if (bandeira == 1) {
+    if (hora_viagem <= 6) valor = valor + (valor * ((bandeira * 5) / 100))
 
-    }
+    if (hora_viagem <= 12) valor = valor + (valor * ((bandeira * 10) / 100))
 
-    if (bandeira == 1) {
-      if (hora_viagem >= 7) {
-        if (hora_viagem <= 12) {
-          valor = valor + (valor * 0.10)
-        }
-      }
-    }
-    if (bandeira == 1) {
-      if (hora_viagem >= 13) {
-        if (hora_viagem <= 23) {
-        }
-      }
-    }
+    if (hora_viagem >= 13) valor = valor + (valor * ((bandeira * 15) / 100))
 
     result_div.innerHTML = `Olá ${nome} Sua corrida, será na bandeira ${bandeira}, percorrerá ${km} km e o total da corrida será de ${valor} `
   }
