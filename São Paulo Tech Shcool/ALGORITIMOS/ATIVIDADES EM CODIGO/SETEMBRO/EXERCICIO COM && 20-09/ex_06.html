@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 06</title>
+</head>
+
+<body>
+  <span>Nota do aluno:</span><input type="number" id="inp_nota"><br><br>
+  <span>Frequencia do aluno:</span><input type="number" id="inp_freq"><br><br>
+  <button onclick="avaliar()">
+    Avaliar Aluno
+  </button>
+</body>
+
+</html>
+
+<script>
+  function avaliar() {
+    // CRIANÇÂO DE VARIAVEIS
+    var nota = Number(inp_nota.value);
+    var frequencia = Number(inp_freq.value);
+
+    if (nota >= 6 && frequencia >= 75) {
+      alert(`Parabéns! Aprovado!`);
+    } else {
+      alert(`"Infelizmente, não foi desta vez`);
+    }
+  }
+</script>

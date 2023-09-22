@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <span>Login: </span><input type="text" id="inp_login"><br><br>
+  <span>Senha: </span><input type="password" id="inp_senha"><br><br>
+  <span>Codigo de segurança: </span><input type="password" id="inp_cod"><br><br>
+  <button onclick="validar()">
+    Entrar
+  </button>
+</body>
+
+</html>
+
+
+<script>
+  function validar() {
+
+    // CRIANDO VARIAVEIS
+    var login = inp_login.value;
+    var senha = inp_senha.value;
+    var cod = Number(inp_cod.value);
+
+    if (login == "SPTech" && senha == "digital" && cod == 123) {
+      alert(`Usuário autenticado com sucesso`);
+    } else {
+      alert(`Falha na autenticação`);
+    }
+  }
+</script>

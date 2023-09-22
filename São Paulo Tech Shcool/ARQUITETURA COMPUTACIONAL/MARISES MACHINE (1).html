@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
+<html lang="en">
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conversor de Números</title>
+</head>
+
+<body>
+
+        <center>
+                <h1 class="font">Conversor de Números</h1>
+
+                <br><br>
+
+                <h3 class="font">insira o numero para ser convertido</h3>
+                <input id="inp_conversao" type="number">
+                <select id="seletor">
+                        <option value="dec">Decimal</option>
+                        <option value="oct">Octal</option>
+                        <option value="hex">Hexadecimal</option>
+                        <option value="bin">Binario</option>
+                </select>
+                <br><br>
+
+                <h3 class="font">converter para:</h3>
+
+                <div class="result">
+                        <div class="campo_inp">
+                                <h4 class="font">Decimal</h4>
+                                <div class="campo_result" id="demo1"></div>
+                        </div>
+                        <div class="campo_inp">
+
+                                <h4 class="font">Octal</h4>
+                                <div class="campo_result" id="demo2"></div>
+                        </div>
+                        <div class="campo_inp">
+
+                                <h4 class="font">Hexadecimal</h4>
+                                <br>
+                                <div class="campo_result" id="demo3"></div>
+                        </div>
+                        <div class="campo_inp">
+                                <h4 class="font">Binario</h4>
+                                <br>
+                                <div class="campo_result" id="demo4"></div>
+                        </div>
+
+                </div>
+                <div class="font centro" id="negativo"></div>
+
+                <br><br>
+
+                <button onclick="converter()">Converter</button>
+        </center>
+
+
+        <script>
+
+                function converter() {
+                        var seletorElemento = document.getElementById("seletor");
+                        var seletor = seletorElemento.value;
+
+                        var decimal = 0;
+
+                        var octal = 0;
+
+                        var hexadecimal = 0;;
+
+                        var binario = 0;
+
+                        if (seletor == "dec") {
+                                decimal = Number(inp_conversao.value);
+                                octal = decimal.toString(8);
+                                hexadecimal = decimal.toString(16);
+                                binario = decimal.toString(2);
+                                negativo.innerHTML = ``
+
+                        } else if (seletor == "oct") {
+
+                                octal = parseInt(Number(inp_conversao.value), 8);
+                                if (!isNaN(octal) && isFinite(octal)) {
+                                        binario = octal.toString(2);
+                                        decimal = octal.toString(10);
+                                        hexadecimal = octal.toString(16);
+                                        negativo.innerHTML = ``
+                                } else {
+                                        negativo.innerHTML = `ERRO, DIGITE UM NUMERO OCTAL!`
+                                }
+
+                        }
+                        document.getElementById("demo1").innerHTML = ` ${decimal}`;
+                        document.getElementById("demo2").innerHTML = ` ${octal}`;
+                        document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
+                        document.getElementById("demo4").innerHTML = ` ${binario}`;
+
+
+                        console.log(decimal);
+                        console.log(octal);
+                        console.log(hexadecimal);
+                        console.log(binario);
+
+
+
+
+                }
+
+        </script>
+</body>
+
+</html>

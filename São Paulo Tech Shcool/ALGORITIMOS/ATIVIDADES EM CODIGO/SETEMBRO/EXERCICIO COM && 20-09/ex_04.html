@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercico 04</title>
+</head>
+
+<body>
+  <span>Horario de acesso a plataforma: </span><input type="number" id="inp_horario"><br><br>
+  <button onclick="recomendacao()">
+    Ver recomendação
+  </button>
+  <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+  function recomendacao() {
+    // CRIANDO VARIAVEL
+    var horario = Number(inp_horario.value);
+
+    // VALIDANDO O HORARIO
+    if (horario >= 19 && horario <= 21) {
+      div_resultado.innerHTML = `<br>Não é recomendável que você assista sua série favorita no horário ${horario}`;
+    } else {
+      div_resultado.innerHTML = `<br>O horário ${horario} é adequado para assistir sua série favorita!`
+    }
+  }
+</script>

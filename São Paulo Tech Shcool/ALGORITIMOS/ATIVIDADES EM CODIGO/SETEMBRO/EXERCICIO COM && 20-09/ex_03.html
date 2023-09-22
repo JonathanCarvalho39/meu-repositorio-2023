@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 03</title>
+</head>
+
+<body>
+  <span>Nota do Aluno:</span><input type="number" id="inp_nota"><br><br>
+  <button onclick="validar()">
+    Avaliar aluno
+  </button>
+</body>
+
+</html>
+
+<script>
+  function validar() {
+    // CRIANDO VARIAVEL
+    var nota = Number(inp_nota.value)
+
+    // VALIDAÇÂO DA NOTA
+    if (nota >= 0 && nota <= 10) {
+      alert(`Nota válida!`);
+    } else {
+      alert(`Onde já se viu nota menor que 0 e maior que 10?!`)
+    }
+  }
+</script>

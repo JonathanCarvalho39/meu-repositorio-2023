@@ -1,0 +1,41 @@
+body {
+  background-color: #17191a;
+}
+
+.campo_result {
+  display: block;
+  background-color: #dcdcdc;
+  border-radius: 20px;
+  width: 150px;
+  height: 40px;
+  font-weight: 4000;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 45px;
+}
+.font {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+}
+
+.campo_inp {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  align-items: center;
+}
+
+.centro {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
