@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 11</title>
+</head>
+
+<body>
+  <span>Quantidade de passagem que deseja adiquirir:</span><input type="number" id="inp_passagem"><br><br>
+  <button onclick="validar()">
+    Compar
+  </button>
+  <div id="div_result"></div>
+</body>
+
+</html>
+
+<script>
+  function validar() {
+    // CRIANDO VARIAVEIS
+    var qnt_passagem = Number(inp_passagem.value)
+    var valor_passagem = 4.40;
+
+    // VALIDANDO PASSAGENS
+    if (qnt_passagem >= 8 && qnt_passagem <= 50) {
+      if (qnt_passagem <= 19) {
+        valor_passagem = valor_passagem - valor_passagem * 0.03;
+        valor_passagem = valor_passagem * qnt_passagem;
+      } else if (qnt_passagem <= 49) {
+        valor_passagem = valor_passagem - valor_passagem * 0.05;
+        valor_passagem = valor_passagem * qnt_passagem;
+      } else {
+        valor_passagem = valor_passagem - valor_passagem * 0.07;
+        valor_passagem = valor_passagem * qnt_passagem;
+      }
+    } else {
+      valor_passagem = valor_passagem * qnt_passagem;
+    }
+
+    div_result.innerHTML = `Total a pagar: R$${valor_passagem}`;
+  }
+</script>

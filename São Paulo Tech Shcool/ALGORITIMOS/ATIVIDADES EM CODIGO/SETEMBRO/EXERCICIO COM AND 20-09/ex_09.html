@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 09</title>
+</head>
+
+<body>
+  <span>Altura inicial: </span><input type="number" id="inp_ai"><br><br>
+  <span>Altura Final: </span><input type="number" id="inp_af"><br><br>
+  <span>Nome Do candidato: </span><input type="text" id="inp_nome"><br><br>
+  <span>Altura do Piloto: </span><input type="number" id="inp_altura_piloto"><br><br>
+  <button onclick="validar()">Verificar Piloto</button>
+  <div id="div_result"></div>
+</body>
+
+</html>
+
+<script>
+  function validar() {
+    var altura_inicial = Number(inp_ai.value);
+    var altura_limite = Number(inp_af.value);
+    var nome = inp_nome.value;
+    var altura_piloto = Number(inp_altura_piloto.value);
+
+    if (altura_inicial > 1 && altura_inicial < altura_limite) {
+      if (altura_piloto >= altura_inicial && altura_piloto <= altura_limite) {
+        div_result.innerHTML += `<br>O candidato ${nome} com altura de ${altura_piloto} participará do processo de seleção de piloto`;
+      } else {
+        div_result.innerHTML += `<br>Infelizmente o candidato ${nome} com altura de ${altura_piloto} não atende os requisitos`;
+      }
+    } else {
+      alert("ATENÇÃO!\nA altura inicial tem que ser menor que e altura final,\ne maior que 1 metro")
+    }
+  }
+</script>
