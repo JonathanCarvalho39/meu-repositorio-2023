@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conversor de Números</title>
+</head>
+
+<body>
+
+        <center>
+                <div class="image"></div>
+                <h1 class="font">Conversor de Números</h1>
+                <h3 class="font">Insira o número para ser convertido</h3>
+                <input style="text-align: center;" class="borda" id="inp_conversao">
+                <select style="width: 110px; text-align: center;" class="borda" id="seletor">
+                        <option value="dec">Decimal</option>
+                        <option value="oct">Octal</option>
+                        <option value="hex">Hexadecimal</option>
+                        <option value="bin">Binário</option>
+                </select>
+                <br><br><br><br>
+
+                <h4 id="apoio" class="font">Converter para:</h4>
+
+                <div id="resultado" class="result">
+
+                        <div class="campo_inp">
+                                <h4 class="font" style="position: absolute;">Decimal</h4>
+                                <div class="campo_result">
+                                        <span class="centro" id="demo1"></span>
+                                </div>
+                        </div>
+                        <div class="campo_inp">
+
+                                <h4 class="font" style="position: absolute;">Octal</h4>
+                                <div class="campo_result">
+                                        <span class="centro" id="demo2"></span>
+                                </div>
+                        </div>
+                        <div class="campo_inp">
+                                <h4 class="font" style="position: absolute;">Hexadecimal</h4>
+                                <div class="campo_result">
+                                        <span class="centro" id="demo3"></span>
+                                </div>
+                        </div>
+                        <div class="campo_inp">
+                                <h4 class="font" style="position: absolute;">Binario</h4>
+                                <div class="campo_result">
+                                        <span class="centro" id="demo4"></span>
+                                </div>
+                        </div>
+
+                </div>
+                <div style="font-weight: bold; color: red; font-size: 20px; margin-top: -20px;" class="font centro"
+                        id="negativo"></div>
+
+                <br><br>
+
+                <button onclick="converter()">Converter</button>
+        </center>
+
+
+        <script>
+
+                function converter() {
+
+                        // DECLARANDO VARIAVEIS
+                        var seletorElemento = document.getElementById("seletor");
+                        var seletor = seletorElemento.value;
+                        var decimal = 0;
+                        var octal = 0;
+                        var hexadecimal = 0;;
+                        var binario = 0;
+                        var validar = inp_conversao.value;
+
+                        // INICIANDO O DISPLAY DOS CAMPOS DE RESULTADO COMO NONE, SEMPRE QUE A FUNÇÂO É ACIONADA OS CAMPOS SOMEM, E SÓ VAO APARECER SE UMA DAS CONDICOES IFs FOR VERDADEIRA
+                        resultado.style.display = 'none'
+                        apoio.style.display = 'none'
+
+                        if (validar != "") {
+
+                                if (seletor == "dec") {
+                                        decimal = Number(inp_conversao.value);
+                                        if (!isNaN(decimal)) {  // VALINDANDO SE O NUMERO É DECIMAL
+
+                                                octal = decimal.toString(8);
+                                                hexadecimal = decimal.toString(16).toUpperCase();  // DEIXANDO A LETRA EM CAIXA ALTA
+                                                binario = decimal.toString(2);
+                                                negativo.innerHTML = ``
+                                                resultado.style.display = 'flex'  // DEIXANDO O CAMPO DE TEXTO VISIVEL
+                                                apoio.style.display = 'block'  // DEIXANDO O CAMPO DE TEXTO VISIVEL
+                                        } else {
+                                                negativo.innerHTML = `ERRO, DIGITE UM NÚMERO DECIMAL!` // MENSAGEM DE ERRO, CASO O NUMERO NÂO SEJA VALIDO
+                                        }
+                                } else if (seletor == "oct") {
+
+                                        var convercao = parseInt(Number(inp_conversao.value), 8); // NESSA VARIAVEL EU PEGUEI A ENTRADA QUE SERIA OCTAL E TENTEI CONVERTER PARA DECIMAL, CASO DE RETORNE NaN EU SEI QUE NÃO É UM NUMERO OCTAL
+                                        if (!isNaN(convercao)) {  // VALIDANDO SE O NUMERO É OCTAL POR MEIO DO NaN RETORNADO NA CONVERSAO NA LINHA DE CIMA
+                                                octal = Number(inp_conversao.value);
+                                                binario = convercao.toString(2);
+                                                decimal = convercao;
+                                                hexadecimal = convercao.toString(16).toUpperCase();
+                                                negativo.innerHTML = ``
+                                                resultado.style.display = 'flex'
+                                                apoio.style.display = 'block'
+                                        } else {
+                                                negativo.innerHTML = `ERRO, DIGITE UM NÚMERO OCTAL!`
+                                        }
+                                } else if (seletor == "hex") {
+                                        convercao = parseInt(inp_conversao.value, 16); // UTILIZEI DO MESMO PRINCIPIO QUE USEI NO OCTAL PARA VALIDAR SE O NUMERO É HEXADECIMAL OU NAO
+                                        if (!isNaN(convercao)) {
+                                                hexadecimal = (inp_conversao.value).toString(16).toUpperCase();
+                                                binario = convercao.toString(2);
+                                                decimal = convercao;
+                                                octal = convercao.toString(8);
+                                                negativo.innerHTML = ``
+                                                resultado.style.display = 'flex'
+                                                apoio.style.display = 'block'
+                                        } else {
+                                                negativo.innerHTML = `ERRO, DIGITE UM NÚMERO HEXADECIMAL!`
+                                        }
+                                } else if (seletor == "bin") {
+
+                                        var comp = Number(inp_conversao.value);
+                                        convercao = (parseInt(comp, 2)).toString(2); // AQUI FOI UM POUCO MAIS COMPLICADO< TIVE QUE FAZER DUAS CONVERSOES, PRIMEIRO CONVERTI O NUERMO DA INPUT PARA BINARIO PARA VALIDAR SE ELA ERA BINARIA OU NÂO
+                                        decimal = parseInt(convercao, 2); // CONVERTI ELA PARA DECIMAL PORQUE ASSIM FICA MAIS FAZER A CONVERSAO PARA OS OUTROS NUMEROS
+                                        if (!isNaN(convercao) && convercao == comp) {
+                                                octal = decimal.toString(8);
+                                                hexadecimal = decimal.toString(16).toUpperCase();
+                                                binario = convercao;
+                                                negativo.innerHTML = ``
+                                                resultado.style.display = 'flex'
+                                                apoio.style.display = 'block'
+
+                                        } else {
+                                                negativo.innerHTML = `ERRO, DIGITE UM NÚMERO BINÁRIO!`
+                                        }
+                                }
+                        } else {
+                                negativo.innerHTML = `INSIRA UM NÚMERO VÁLIDO!`
+                        }
+                        document.getElementById("demo1").innerHTML = ` ${decimal}`;  // POPULANDO OS CAMPOS COM AS VARIAVES CORRESPONDENTES
+                        document.getElementById("demo2").innerHTML = ` ${octal}`;   // POPULANDO OS CAMPOS COM AS VARIAVES CORRESPONDENTES
+                        document.getElementById("demo3").innerHTML = ` ${(hexadecimal)}`;   // POPULANDO OS CAMPOS COM AS VARIAVES CORRESPONDENTES
+                        document.getElementById("demo4").innerHTML = ` ${binario}`;   // POPULANDO OS CAMPOS COM AS VARIAVES CORRESPONDENTES
+                }
+
+        </script>
+</body>
+
+</html>
