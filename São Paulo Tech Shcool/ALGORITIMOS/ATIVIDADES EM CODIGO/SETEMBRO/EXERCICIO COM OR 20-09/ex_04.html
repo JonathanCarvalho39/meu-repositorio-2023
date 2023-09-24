@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 04</title>
+</head>
+
+<body>
+  <span>Forma de Pagamento (dinheiro, cartao de débito, cartão de crédito, boleto): </span><input
+    id="inp_pagamento"><br><br>
+  <button onclick="analisar()">
+    Analisar Compra
+  </button>
+  <div id="div_result"></div>
+</body>
+
+</html>
+
+<script>
+  function analisar() {
+    // CRIANDO VARIAVEIS
+    var tipo_pagamento = inp_pagamento.value;
+
+    // VALIDANDO A ENTRADA DO USUARIO PARA VARIAR NA AÇÂO DO SITE
+    if (tipo_pagamento == "dinheiro" || tipo_pagamento == "cartão de débito") {
+      div_result.innerHTML = `Você terá que pagar a vista`;
+    } else if (tipo_pagamento == "cartão de crédito" || tipo_pagamento == "boleto") {
+      div_result.innerHTML = `Pagamento poderá ser parcelado`;
+    } else {
+      div_result.innerHTML = `Coloque uma das opções`;
+
+    }
+  }
+</script>

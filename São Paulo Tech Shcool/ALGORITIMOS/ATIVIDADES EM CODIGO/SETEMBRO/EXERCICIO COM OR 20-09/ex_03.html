@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 03</title>
+</head>
+
+<body>
+  <span>Renda Individual: </span><input type="number" id="inp_renda_i"><br><br>
+  <span>Renda Familiar: </span><input type="number" id="inp_renda_f"><br><br>
+  <button onclick="verificar()">
+    Terei o benefício
+  </button>
+  <div id="div_result"></div>
+</body>
+
+</html>
+
+<script>
+  function verificar() {
+    // DECLARANDO VARIAVEIS
+    var renda_familiar = Number(inp_renda_i.value);
+    var renda_individual = Number(inp_renda_f.value);
+
+    // VERIFICANDO RENDAS
+    if (renda_individual <= 2000 || renda_familiar <= 3000) {
+      div_result.innerHTML = `Você terá direito ao auxílio`;
+    } else {
+      div_result.innerHTML = `Sem direito ao auxílio`;
+    }
+  }
+</script>

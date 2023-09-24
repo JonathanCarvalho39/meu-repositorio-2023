@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 01</title>
+</head>
+
+<body>
+  <Span>Nome da Fruta: </Span><input type="text" id="inp_fruta"><br><br>
+
+  <button onclick="validar()">
+    Vai comer
+  </button>
+</body>
+
+</html>
+
+<script>
+
+  function validar() {
+    var fruta = inp_fruta.value;
+
+    if (fruta == "uva" || fruta == "abacaxi") {
+      alert(`Sim, vai comer ${fruta}`);
+    } else {
+      alert(`A fruta ${fruta} ela não come`);
+    }
+  }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 02</title>
+</head>
+
+<body>
+  <span>Nota do Enem: </span><input type="number" id="inp_enem"><br><br>
+  <span>Vestibular interno: </span><input type="number" id="inp_interno"><br><br>
+  <button onclick="validar()">
+    Avaliação
+  </button>
+</body>
+
+</html>
+
+<script>
+  function validar() {
+    // DECLARANDO VARIAVEIS
+    var enem = Number(inp_enem.value);
+    var interno = Number(inp_interno.value);
+
+    // VERIFICANDO NOTA
+
+    if (enem >= 800 || interno >= 700) {
+      alert(`Parabéns! Aprovado`);
+    } else {
+      alert(`Tente semestre que vem!`);
+    }
+  }
+</script>
