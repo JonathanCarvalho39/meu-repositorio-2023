@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercico 03</title>
+</head>
+
+<body>
+  <div style="color: blue;">
+    Total guardado no cofrinho: R$ <b><u id="valor_guardado">0</u></b><br>
+    Depósitos efetuados: <b><u id="qnt_deposito">0</u></b><br>
+    Retiradas efetuadas: <b><u id="qtn_retirada">0</u></b><br>
+  </div><br>
+  <button onclick="deposita050()">
+    Depositar 0,50
+  </button><br><br>
+  <button onclick="deposita2()">
+    Depositar 2,00
+  </button><br><br>
+  <button onclick="retira050()">
+    Retirar 0,50
+  </button><br><br>
+  Insira o valor a ser retirado: <input id="inp_retirada" type="number">
+  <button onclick="retirar()">
+    Retirar
+  </button>
+
+</body>
+
+
+</html>
+
+
+<script>
+  var valor_depositado = 0;
+  var deposito = 0;
+  var retirada = 0;
+
+  function deposita050() {
+    deposito += 1;
+    valor_depositado = Number(valor_guardado.innerHTML);
+    valor_depositado += 0.50;
+    valor_guardado.innerHTML = `${valor_depositado}`
+    qnt_deposito.innerHTML = `${deposito}`
+  }
+
+  function deposita2() {
+    deposito += 1;
+    valor_depositado = Number(valor_guardado.innerHTML);
+    valor_depositado += 2;
+    valor_guardado.innerHTML = `${valor_depositado}`
+    qnt_deposito.innerHTML = `${deposito}`
+  }
+
+  function retira050() {
+    retirada += 1;
+    valor_depositado = Number(valor_guardado.innerHTML);
+    valor_depositado -= 0.50;
+    valor_guardado.innerHTML = `${valor_depositado}`
+    qtn_retirada.innerHTML = `${retirada}`
+  }
+
+  function retirar() {
+    var valor_retirado = Number(inp_retirada.value);
+    retirada += 1;
+    valor_depositado = Number(valor_guardado.innerHTML);
+    valor_depositado -= valor_retirado;
+    valor_guardado.innerHTML = `${valor_depositado}`
+    qtn_retirada.innerHTML = `${retirada}`
+  }
+</script>

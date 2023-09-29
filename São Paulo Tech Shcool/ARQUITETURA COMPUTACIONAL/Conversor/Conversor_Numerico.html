@@ -22,8 +22,6 @@
                         <option value="bin">Binário</option>
                 </select>
                 <br><br><br><br>
-
-
                 <h4 id="apoio" class="font">Converter para:</h4>
 
                 <div id="resultado" class="result">
@@ -126,7 +124,7 @@
                                 } else if (seletor == "bin") {
 
                                         var comp = Number(inp_conversao.value);
-                                        convercao = (parseInt(comp, 2)).toString(2); // AQUI FOI UM POUCO MAIS COMPLICADO< TIVE QUE FAZER DUAS CONVERSOES, PRIMEIRO CONVERTI O NUERMO DA INPUT PARA BINARIO PARA VALIDAR SE ELA ERA BINARIA OU NÂO
+                                        convercao = (parseInt(comp,2)).toString(2); // AQUI FOI UM POUCO MAIS COMPLICADO< TIVE QUE FAZER DUAS CONVERSOES, PRIMEIRO CONVERTI O NUERMO DA INPUT PARA BINARIO PARA VALIDAR SE ELA ERA BINARIA OU NÂO
                                         decimal = parseInt(convercao, 2); // CONVERTI ELA PARA DECIMAL PORQUE ASSIM FICA MAIS FAZER A CONVERSAO PARA OS OUTROS NUMEROS
                                         if (!isNaN(convercao) && convercao == comp) {
                                                 octal = decimal.toString(8);

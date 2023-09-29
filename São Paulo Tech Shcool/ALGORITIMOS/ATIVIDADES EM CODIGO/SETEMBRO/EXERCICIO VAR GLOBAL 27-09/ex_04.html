@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 04</title>
+</head>
+
+<body>
+  <img id="imagem" style="width: 350px;transform: scaleX();"
+    src="https://i.pinimg.com/originals/a2/08/f9/a208f977712baa2399ceff1564d9fa57.gif" alt="">
+</body><br><br>
+<span>Digite o valor da distância desejada: </span><input type="number" id="inp_valor">
+<br><br>
+<button onclick="esquerda()">
+  Mover p/ Esquerda
+</button>
+<button onclick="direita()">
+  Mover p/ Direita
+
+</button>
+
+
+</html>
+
+<script>
+  var distancia = 0;
+  function esquerda() {
+
+
+    distancia -= Number(inp_valor.value);
+    imagem.style.marginLeft = `${distancia}px`
+    imagem.style.transform = "scaleX(-1)"
+
+    //FUNÇÃO PARA QUE O BART DE A VOLTA NA TELA
+    /*    if (distancia < -450) {
+         imagem.style.marginLeft = `100%`
+         distancia = 1400;
+       } */
+
+  }
+
+  function direita() {
+    distancia += Number(inp_valor.value);
+    imagem.style.marginLeft = `${distancia}px`
+    imagem.style.transform = "scaleX(1)"
+
+    //FUNÇÃO PARA QUE O BART DE A VOLTA NA TELA
+    /*     if (distancia > 1400) {
+          imagem.style.marginLeft = `-450`
+          distancia = -450;
+        } */
+  }
+</script>

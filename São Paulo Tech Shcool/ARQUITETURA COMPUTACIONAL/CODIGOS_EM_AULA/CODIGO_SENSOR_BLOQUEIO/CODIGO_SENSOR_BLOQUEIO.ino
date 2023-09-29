@@ -16,11 +16,13 @@ void setup() {
 
 void loop() {
   if (digitalRead(pinoSensor) == LOW) {
+    Serial.println("1");
     segundosUso = TempoLivreSegundos;
     minutosUso = TempoLivreSegundos / 60;
     horasUso = TempoLivreSegundos / 3600;
-    TempoUsoSegundos++; 
+    TempoUsoSegundos++;
   } else {
+    Serial.println("0");
     segundosLivre = TempoUsoSegundos;
     minutosLivre  = TempoUsoSegundos / 60;
     horasLivre = TempoUsoSegundos / 3600;

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="atualizarCliques()">Clique em mim</button><br />
+    Cliques: <span id="span_cliques">0</span>
+
+    <button onclick="resetar()">Resetar</button>
+
+    Digite seu nome:
+    <input type="text" id="input_nome" />
+
+    <button onclick="cumprimentar()">Cumprimentar</button>
+  </body>
+</html>
+<script>
+  // function atualizarCliques() {
+  //   var numero = Number(span_cliques.innerHTML);
+  //   span_cliques.innerHTML = numero + 1;
+  // }
+
+  var numero = 0;
+  var nome = "";
+
+  function cumprimentar() {
+    nome = input_nome.value;
+    alert(`Olá ${nome}`);
+  }
+
+  function atualizarCliques() {
+    numero += 1;
+    span_cliques.innerHTML = numero;
+  }
+
+  function resetar() {
+    numero = 0;
+    span_cliques.innerHTML = numero;
+  }
+</script>
