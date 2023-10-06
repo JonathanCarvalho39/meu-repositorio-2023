@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercico 06</title>
+</head>
+
+<body>
+  <span>Pessoa que mais Ama:</span><input type="text" id="inp_pessoa"><br><br>
+
+  <span>O quanto você ama essa pessoa:</span><input type="number" id="inp_qnt_amr"><br><br>
+</body>
+
+<button onclick="calc_amor()">
+  Expressar amor
+</button><br><br>
+
+<div id="result"></div>
+
+</html>
+
+<script>
+  function calc_amor() {
+
+    result.innerHTML = ``;
+    var contador = 1;
+    var qnt_amr = Number(inp_qnt_amr.value);
+    var nome = inp_pessoa.value;
+
+    while (contador <= qnt_amr) {
+      result.innerHTML += `${contador} - ${nome} te amo!<br>`;
+      contador += 1;
+    }
+  }
+</script>

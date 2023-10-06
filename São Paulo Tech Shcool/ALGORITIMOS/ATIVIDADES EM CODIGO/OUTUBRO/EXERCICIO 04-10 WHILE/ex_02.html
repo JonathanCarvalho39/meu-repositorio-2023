@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 02</title>
+</head>
+
+<body>
+  <button onclick="repitir()">
+    Diga algo sobre a matéria de Algoritmos
+  </button>
+  <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+  function repitir() {
+    var numero = 1;
+    mensagem.innerHTML = ``;
+    while (numero <= 7) {
+      mensagem.innerHTML += `<br>Aula boa`;
+      numero += 1;
+    }
+  }
+</script>

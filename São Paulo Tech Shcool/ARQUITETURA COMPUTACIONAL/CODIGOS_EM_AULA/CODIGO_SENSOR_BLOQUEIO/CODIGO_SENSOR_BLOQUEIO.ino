@@ -1,34 +1,44 @@
-int pinoSensor = 7;
-int TempoUsoSegundos = 0;
-int TempoLivreSegundos = 0;
-int horasLivre = 0 ; 
-int minutosLivre = 0;
-int segundosLivre = 0;
-int horasUso = 0 ; 
-int minutosUso = 0;
-int segundosUso = 0;
-    
 
-void setup() {
-  pinMode(pinoSensor, INPUT);
-  Serial.begin(9600);
-}
-
-void loop() {
-  if (digitalRead(pinoSensor) == LOW) {
-    Serial.println("1");
-    segundosUso = TempoLivreSegundos;
-    minutosUso = TempoLivreSegundos / 60;
-    horasUso = TempoLivreSegundos / 3600;
-    TempoUsoSegundos++;
-  } else {
-    Serial.println("0");
-    segundosLivre = TempoUsoSegundos;
-    minutosLivre  = TempoUsoSegundos / 60;
-    horasLivre = TempoUsoSegundos / 3600;
-    TempoLivreSegundos++; 
+#include <DHT.h>
+#include <DHT_U.h>
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
+#include <DHT_U.h>
+#include "DHT.h"
+#define DHTPIN A1
+#define LM35PIN A5
+#define LUMIPIN A0
+#define CHAVPIN 7
+DHT dht(DHTPIN, DHT11);
+void setup()
+  {
+    pinMode(DHTPIN, INPUT);
+    pinMode(CHAVPIN, INPUT);
+    Serial.begin(9600);
+    dht.begin();
   }
-
-
+void loop()
+  {
+   // float dht11_umidade = dht.readHumidity();
+   // float dht11_temperatura = dht.readTemperature();
+   // Serial.print(dht11_umidade);
+   // Serial.print(";");
+   // Serial.print(dht11_temperatura);
+   // Serial.print(";");
+   // float luminosidade = analogRead(LUMIPIN);
+   // Serial.print(luminosidade);
+   // Serial.print(";");
+   // float lm35_temperatura = analogRead(LM35PIN);
+   // lm35_temperatura = lm35_temperatura * 0.00488;
+   // lm35_temperatura = lm35_temperatura * 100;
+   // Serial.print(lm35_temperatura);
+   // Serial.print(";");
+    int chave = digitalRead(7);
+if (chave == 0)
+  {
+    Serial.println("1");
+  }else{
+    Serial.println("0");
+  }
   delay(1000);
-}
+  }
