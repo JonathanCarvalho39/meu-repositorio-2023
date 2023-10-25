@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 09</title>
+</head>
+
+<body>
+  <span>Digite um numero: </span><input type="text" id="inp_numero"><br><br>
+  <span>Digite uma frase: </span><input type="text" id="inp_frase"><br><br>
+  <button onclick="mensagem()">
+    Papagaio
+  </button>
+</body>
+
+</html>
+
+<script>
+  function mensagem() {
+    var contador = 1
+    var numero = Number(inp_numero.value);
+    var frase = inp_frase.value;
+    while (contador <= numero) {
+      alert(frase);
+      contador += 1;
+    }
+  }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 14
+  </title>
+</head>
+
+<body>
+  <span>Idade: </span><input onkeyup="idade()" type="number" id="inp_idade"><br><br>
+</body>
+<div id="result"></div>
+
+</html>
+
+<script>
+  function idade() {
+    var idade = Number(inp_idade.value);
+    result.innerHTML = ``;
+    var contador = 0;
+
+    while (contador <= idade) {
+      if (inp_idade.value == "") {
+        result.innerHTML = ``;
+      } else {
+        if (contador <= 4) {
+          result.innerHTML += `${contador} anos (Primeira Infância)<br>`;
+        } else if (contador <= 6) {
+          result.innerHTML += `${contador} anos (Pré-escolar)<br>`;
+        } else if (contador <= 10) {
+          result.innerHTML += `${contador} anos (Segunda Infância)<br>`;
+        } else if (contador <= 18) {
+          result.innerHTML += `${contador} anos (Adolescência)<br>`;
+        } else if (contador <= 50) {
+          result.innerHTML += `${contador} anos (Adulto)<br>`;
+        } else if (contador <= 100) {
+          result.innerHTML += `${contador} anos (Melhor idade)<br>`;
+        } else if (contador > 100) {
+          result.innerHTML += `${contador} anos (Matusalém)<br>`;
+        }
+      }
+
+      contador++;
+    }
+  }
+</script>

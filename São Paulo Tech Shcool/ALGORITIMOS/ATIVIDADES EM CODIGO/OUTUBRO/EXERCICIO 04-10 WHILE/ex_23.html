@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 23</title>
+</head>
+
+<body>
+  Limite inferior de amostragem (apartir de 2): <input type="number" id="inp_inferior"><br><br>
+  Limite Superior de amostragem (3 a 99): <input type="number" id="inp_superior"><br><br>
+  Número para testar a divisibilidade (3 a 10): <input type="number" id="inp_contar"><br><br>
+
+  <button onclick="contar()">
+    contar
+  </button><br><br>
+  <strong
+    style=" width: 500px;color: red; display: none; align-items: center; justify-content: center;text-align: center;"
+    id="alerta"></strong>
+  <div id="result"></div>
+</body>
+
+</html>
+
+
+
+<script>
+
+  function contar() {
+    result.innerHTML = '';
+    alerta.innerHTML = 'Atenção!<br>';
+    alerta.style.display = "none";
+    var valid = 0;
+    var num_inf = Number(inp_inferior.value);
+    var num_sup = Number(inp_superior.value);
+    var entrada = Number(inp_contar.value);
+    var qnt = 0;
+    var soma = 0;
+    var maior = 0;
+    var menor = 0;
+
+    if (num_inf <= 1) {
+      alerta.innerHTML += 'O limite inferior precisa ser maior que 1<br>';
+      alerta.style.display = "flex";
+      valid = 1
+    }
+    if (num_sup >= 100 || num_sup < num_inf) {
+      alerta.innerHTML += 'O limite Superirio tem que ser menor que 100 e não pode ser menor que o limite inferior<br>';
+      alerta.style.display = "flex";
+      valid = 1
+    }
+    if (entrada < 3 || entrada > 10) {
+      alerta.innerHTML += '<br> O numero para testar a divisibilidade precisa ser entre 3 e 10<br>';
+      alerta.style.display = "flex";
+      valid = 1
+    }
+    if (valid == 0) {
+      var contador = num_inf
+      while (contador <= num_sup) {
+
+        if (contador % entrada == 0) {
+          result.innerHTML += `${contador}, `;
+          qnt++;
+          soma = soma + contador;
+          maior = contador;
+          if (valid == 0) {
+            menor = contador;
+            valid += 1;
+          }
+        }
+        contador++;
+      }
+      result.innerHTML += `<br>QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${qnt} <br>
+
+SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${soma} <br>
+
+MÉDIA DOS NÚMEROS EXIBIDOS: ${soma / qnt} <br>
+
+MAIOR NÚMERO EXIBIDO: ${maior} <br>
+
+MENOR NÚMERO EXIBIDO: ${menor}`
+    }
+
+
+
+  }
+</script>

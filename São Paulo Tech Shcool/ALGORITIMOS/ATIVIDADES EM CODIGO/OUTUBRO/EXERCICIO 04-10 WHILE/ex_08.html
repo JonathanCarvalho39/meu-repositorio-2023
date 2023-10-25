@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 08</title>
+</head>
+
+<body>
+  <span>Insira um numero entre 0 e 200:</span><input type="text" id="inp_numero"><br><br>
+  <button onclick="mostrar()">
+    Viva o 7!
+  </button>
+  <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+  function mostrar() {
+    var contador = 0;
+    var numero = Number(inp_numero.value);
+    result.innerHTML = ``;
+    while (contador <= numero) {
+      if (contador % 7 == 0) {
+        result.innerHTML += `${contador} <br>`
+      }
+      contador += 1;
+    }
+  }
+</script>

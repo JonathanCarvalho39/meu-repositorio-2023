@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+
+  </title>
+</head>
+
+<body>
+  <span>Quantidade de Elefantes: </span><input type="text" id="qnt_elefante"><br><br>
+  <button onclick="medium()">
+    Atazanar a médium
+  </button><br><br>
+  <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+  function medium() {
+    var contador = 2;
+    var elefante = Number(qnt_elefante.value);
+    var frase = `incomodam, `;
+    result.innerHTML = ``;
+    if (elefante == 1) {
+      result.innerHTML += `1 elefante incomoda muita gente!<br>`;
+    }
+    while (contador <= elefante) {
+      frase += `incomodam, `;
+      result.innerHTML += `1 elefante incomoda muita gente!<br>`;
+      result.innerHTML += `${contador} elefante ${frase}  muito mais<br>`;
+      contador++;
+    }
+  }
+</script>

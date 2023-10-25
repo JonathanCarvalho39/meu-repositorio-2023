@@ -4,27 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercicio 01</title>
+  <title>Prova</title>
 </head>
 
 <body>
-  <button onclick="contador()">
-    Contar
-  </button>
+  Quantidade de pontos que o naruto tem: <input type="number" id="inp_ponto"><br><br>
+  Quantidade de Clones desejados: <input type="number" id="inp_qnt"><br><br>
+  Quantidade de Clones por linha: <input type="number" id="inp_clone_linha"><br><br>
 
-  <div id="result"></div>
+  <button onclick="criar()">
+    Criar clones
+  </button>
 </body>
 
 </html>
 
-<script>
-  function contador() {
-    result.innerHTML = ``;
-    var contador = 1;
-    while (contador <= 15) {
-      result.innerHTML += `${contador}<br>`
-      contador += 1
-    }
 
+<script>
+  function criar() {
+    var ponto = Number(inp_ponto.value);
+    var qnt = Number(inp_qnt.value);
+    var clone = Number(inp_clone_linha.value);
+
+    if (ponto < 20 || ponto > 5000 && qnt < 0 || qnt > 250 && clone > 0) {
+
+    } else {
+      alert(`É nescessario que a quantidade de pontos esteja entre 20 e 5000 e a quantidade de clones estejam entre 0 e 250, e o clone por linha não pode ser`)
+    }
   }
 </script>

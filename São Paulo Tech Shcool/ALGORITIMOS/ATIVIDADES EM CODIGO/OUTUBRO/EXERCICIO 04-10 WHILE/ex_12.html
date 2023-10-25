@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 12
+  </title>
+</head>
+
+<body>
+  <span>Qual a taboado que deseja ver (2 a 9): </span><input type="number" id="inp_numero"><br><br>
+  <span>Até que número a tabuada deve ser construída: </span><input type="number" id="inp_construcao"><br><br>
+  <button onclick="taboada()">
+    Ver Tabuada
+  </button><br><br>
+  <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+  function taboada() {
+    var numero = Number(inp_numero.value);
+    var construcao = Number(inp_construcao.value);
+    var contador = 1;
+    result.innerHTML = ``;
+    while (contador <= construcao) {
+      if (contador % 2 == 0) {
+        result.innerHTML += `<span style = "color: blue;">${numero} x ${contador} = ${numero * contador}<br></span>`;
+      } else {
+        result.innerHTML += `<span style = "color: red;">${numero} x ${contador} = ${numero * contador}<br></span>`;
+      }
+      contador += 1;
+
+    }
+
+  }
+</script>

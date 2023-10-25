@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 16</title>
+</head>
+
+<body>
+  <span>Quantas pessoas vâo no carro: </span><input type="number" id="inp_carona"><br><br>
+  <span>Capacidade total: </span><input type="number" id="inp_cap"><br><br>
+  <button onclick="partiu()">Partiu Carona</button><br><br>
+  <div id="result"></div>
+
+</body>
+
+</html>
+
+<script>
+  function partiu() {
+    var contador = 1;
+    result.innerHTML = ``;
+    var carona = Number(inp_carona.value);
+    var capaciade = Number(inp_cap.value)
+
+    while (contador <= carona) {
+      if (contador == 1) {
+        result.innerHTML += `Entrou o 1º passageiro (que é o(a) motorista)<br>`;
+      } else if (contador <= capaciade) {
+        result.innerHTML += `Entrou o ${contador}º passageiro)<br>`;
+      } else {
+        result.innerHTML += `O ${contador}º passageiro terá que esperar! )<br>`;
+      }
+
+      contador++;
+    }
+
+  }
+</script>
