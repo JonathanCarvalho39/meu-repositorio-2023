@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio</title>
+</head>
+
+<body>
+  Quantidade de Macarons: <input type="number" id="inp_qtn_mac"><br><br>
+  Quantidade de Brigadeiros: <input type="number" id="inp_qtn_brig"><br><br>
+  Quantidade de Cupcakes: <input type="number" id="inp_qtn_cup"><br><br>
+  Quantidade de Cheesecakes: <input type="number" id="inp_qtn_chees"><br><br>
+
+  Preço do Macarons: <input type="number" id="inp_preco_mac"><br><br>
+  Preço do Brigadeiros: <input type="number" id="inp_preco_brig"><br><br>
+  Preço do Cupcakes: <input type="number" id="inp_preco_cup"><br><br>
+  Preço do Cheesecakes: <input type="number" id="inp_preco_chees"><br><br>
+  <button onclick="venda()">
+    Verificar Vendas
+  </button><br>
+
+  <div style="margin-top: 10px;" id="result"></div>
+
+</body>
+
+</html>
+
+<script>
+  function venda() {
+    result.innerHTML = ``;
+    var qtn_mac = Number(inp_qtn_mac.value);
+    var qtn_brig = Number(inp_qtn_brig.value);
+    var qtn_cup = Number(inp_qtn_cup.value);
+    var qtn_ches = Number(inp_qtn_chees.value);
+    var preco_mac = Number(inp_preco_mac.value);
+    var preco_brig = Number(inp_preco_brig.value);
+    var preco_cup = Number(inp_preco_cup.value);
+    var preco_ches = Number(inp_preco_chees.value);
+    var soma_preco = 0
+
+    if (preco_brig < 0 || preco_ches < 0 || preco_cup < 0 || preco_mac < 0) {
+      result.innerHTML = `ERRO!<br> O preço não pode ser menor que 0`
+    } else {
+      var contador = 0;
+
+      while (contador < qtn_mac) {
+        contador++;
+        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="./images_Macarons.jpeg" alt=""> - R$ ${preco_mac}<br>`;
+        soma_preco += preco_mac;
+      }
+      qtn_brig += contador;
+      while (contador < qtn_brig) {
+        contador++
+        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="./images_Brigadeiro.jpeg" alt=""> - R$ ${preco_brig}<br>`;
+        soma_preco += preco_brig;
+      }
+      qtn_cup += contador;
+      while (contador < qtn_cup) {
+        contador++
+        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="./images_Cupcakes .jpeg" alt=""> - R$ ${preco_cup}<br>`;
+        soma_preco += preco_cup;
+      }
+      qtn_ches += contador
+      while (contador < qtn_ches) {
+        contador++
+        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="./images_Cheesecakes.jpeg" alt=""> - R$ ${preco_ches}<br>`;
+        soma_preco += preco_ches;
+      }
+      result.innerHTML += `<br>Com a quantidade de ${inp_qtn_mac.value} Macarons, ${inp_qtn_brig.value} Brigadeiros, ${inp_qtn_cup.value} Cupcakes e ${inp_qtn_chees.value} Cheesecakes, a venda totalizará R$ ${(soma_preco).toFixed(2)}`
+    }
+  }
+</script>
