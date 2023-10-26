@@ -47,25 +47,25 @@
 
       while (contador < qtn_mac) {
         contador++;
-        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="./images_Macarons.jpeg" alt=""> - R$ ${preco_mac}<br>`;
+        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="https://www.carpemundi.com.br/wp-content/uploads/2021/05/macarons-de-paris-sadahuru-aoki.jpg" alt=""> - R$ ${preco_mac}<br>`;
         soma_preco += preco_mac;
       }
       qtn_brig += contador;
       while (contador < qtn_brig) {
         contador++
-        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="./images_Brigadeiro.jpeg" alt=""> - R$ ${preco_brig}<br>`;
+        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="https://harald.com.br/wp-content/uploads/2020/04/briadeirogormet-melken-700x520-1.jpg" alt=""> - R$ ${preco_brig}<br>`;
         soma_preco += preco_brig;
       }
       qtn_cup += contador;
       while (contador < qtn_cup) {
         contador++
-        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="./images_Cupcakes .jpeg" alt=""> - R$ ${preco_cup}<br>`;
+        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="https://static.itdg.com.br/images/1200-675/7534f5bcee2488b51810b7b7d9239eee/89546-original.jpg" alt=""> - R$ ${preco_cup}<br>`;
         soma_preco += preco_cup;
       }
       qtn_ches += contador
       while (contador < qtn_ches) {
         contador++
-        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="./images_Cheesecakes.jpeg" alt=""> - R$ ${preco_ches}<br>`;
+        result.innerHTML += `Venda ${contador} - <img style="width: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKYIJ7fPqWaMiS66zKQWDUcUgEJdKLLcJLdA&usqp=CAU" alt=""> - R$ ${preco_ches}<br>`;
         soma_preco += preco_ches;
       }
       result.innerHTML += `<br>Com a quantidade de ${inp_qtn_mac.value} Macarons, ${inp_qtn_brig.value} Brigadeiros, ${inp_qtn_cup.value} Cupcakes e ${inp_qtn_chees.value} Cheesecakes, a venda totalizará R$ ${(soma_preco).toFixed(2)}`
