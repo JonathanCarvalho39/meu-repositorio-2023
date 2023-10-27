@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de frutas</title>
+</head>
+
+<body>
+  <input type="text" id="inp_fruta"><br><br>
+  <button onclick="adicionar()">Adicionar</button>
+  <button onclick="exibir()">Exibir</button><br><br>
+  <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+  var listaFruta = ['maça', 'banana'];
+
+
+  function adicionar() {
+    var fruta = inp_fruta.value;
+    listaFruta.push(fruta);
+  }
+
+  function exibir() {
+    for (var cont = 0; cont < listaFruta.length; cont++) {
+      result.innerHTML += `${listaFruta[cont]}<br>`
+    }
+  }
+
+</script>

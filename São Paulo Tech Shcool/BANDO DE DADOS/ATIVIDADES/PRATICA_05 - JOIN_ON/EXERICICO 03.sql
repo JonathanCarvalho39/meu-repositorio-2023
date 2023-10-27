@@ -87,10 +87,13 @@ select * from
 
 -- Exibir os dados dos funcionários, dos setores em que trabalham e dos seus acompanhantes. 
 select * from 
-	setor join funcionario
-		on setor_id = fk_setor
+	funcionario join setor
+		on  fk_setor = setor_id
 			join acompanhante
 				on funcionario_id = fk_funcionario;
+                
+                select * from funcionario;
+                select * from setor;
     
 
         

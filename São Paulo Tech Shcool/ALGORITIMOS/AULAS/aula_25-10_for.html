@@ -8,7 +8,26 @@
 </head>
 
 <body>
-
+  <button onclick="contar()"> Contar</button>
+  <div id="result"></div>
 </body>
 
 </html>
+
+<script>
+
+  function contar() {
+    var contador = 0;
+
+    // Contador com o While
+    while (contador < 15) {
+      contador++;
+      result.innerHTML += `${contador}<br>`
+    }
+
+    for (var contador = 1; contador <= 15; contador++) {
+      result.innerHTML += `${contador}<br>`
+    }
+  }
+
+</script>

@@ -43,7 +43,8 @@ create table treinador (
     fk_treinador_super int,
     fk_nadador int) auto_increment = 10;
 
-  
+
+
 alter table treinador add constraint fkTreinadorEx
 	foreign key (fk_treinador_super)
 		references treinador(treinador_id);
