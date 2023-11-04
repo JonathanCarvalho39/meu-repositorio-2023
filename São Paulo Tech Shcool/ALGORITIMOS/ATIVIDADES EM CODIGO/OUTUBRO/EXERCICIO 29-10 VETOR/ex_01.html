@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vetor</title>
+</head>
+
+<body>
+  Buscar Fruta <input type="text" id="inp_fruta"><br><br>
+  <button onclick="pesquisa()">Pesquisar</button><br><br>
+  <div id="result"></div>
+
+
+</body>
+
+</html>
+
+<script>
+  function pesquisa() {
+    var fruta = ['Banana', 'Maçã', 'Pera', 'Uva', 'Goiaba', 'Manga']
+    var inpFruta = inp_fruta.value;
+    var mensagem = `Não existe a fruta ${inpFruta} na lista.`
+    for (var i = 0; fruta.length > i; i++) {
+      if (fruta[i].toUpperCase() == inpFruta.toUpperCase()) {
+        mensagem = `A fruta ${fruta[i]} existe na lista`
+      } else {
+        result.innerHTML = mensagem
+      }
+    }
+  }
+
+</script>

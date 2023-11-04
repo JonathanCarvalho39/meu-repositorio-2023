@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 04</title>
+</head>
+
+<body>
+  Qual seu filme favorito: <input type="text" id="inp_filme"> <br><br>
+
+  <button onclick="cadastrar()">Cadastrar filme</button>
+  <button onclick="favorito()">Ver Favoritos</button><br><br>
+
+  <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+  var filmes = [];
+
+
+  function cadastrar() {
+    result.innerHTML = '';
+    filmes.push(inp_filme.value);
+    inp_filme.value = '';
+  }
+
+  function favorito() {
+    for (var i = 0; filmes.length > i; i++) {
+      result.innerHTML += `${i + 1} - ${filmes[i]}<br>`;
+    }
+    result.innerHTML += `Total: ${filmes.length}<br>`;
+    result.innerHTML += `O que filme que mais gosta é ${filmes[0]}.<br>`;
+    result.innerHTML += `E desses, o que menos gosta é ${filmes[filmes.length - 1]}`;
+  }
+
+</script>

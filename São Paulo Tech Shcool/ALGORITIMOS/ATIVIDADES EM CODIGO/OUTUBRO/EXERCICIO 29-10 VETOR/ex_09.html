@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 09</title>
+</head>
+
+<body>
+  Nome de cada Projeto que criou na vida: <input type="text" id="inp_projeto"><br><br>
+  <button onclick="registrar()">Registrar</button>
+  <div id="result"></div>
+</body>
+
+</html>
+
+
+<script>
+  var projeto = [];
+
+
+  function registrar() {
+
+    var categoria = '';
+    projeto.push(inp_projeto.value);
+    inp_projeto.value = '';
+    for (var i = 0; projeto.length > i; i++) {
+      if (projeto.length <= 4) {
+        categoria = 'Júnior';
+      } else if (projeto.length >= 5 && projeto.length <= 12) {
+        categoria = 'Pleno'
+      } else {
+        categoria = 'Sênior'
+      }
+      result.innerHTML = `<br> Você já fez ${projeto.length} projetos. Por isso você é um profissional <b>${categoria}</b> `;
+    }
+  }
+
+
+</script>

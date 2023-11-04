@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 5</title>
+</head>
+
+<body>
+  Adicione Seus filmes Favoritos: <input type="text" id="inp_favorito">
+  <button onclick="cadastrar()">
+    Cadastrar Filme
+  </button><br><br>
+  <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+  var filmes = [];
+
+  function cadastrar() {
+    result.innerHTML = ``;
+
+    if (inp_favorito.value != '') {
+      filmes.push(inp_favorito.value)
+      result.innerHTML += `Seu filme favorito: ${filmes[0]}<br>`;
+      if (filmes.length > 3) {
+        result.innerHTML += `Seu 3º filme favorito: ${filmes[2]}<br>`;
+      } else {
+        result.innerHTML += `Seu 3º filme favorito: Ainda não existe<br>`;
+      }
+      result.innerHTML += `Total de filmes cadastrados: ${filmes.length}<br>`;
+    }
+    inp_favorito.value = ''
+  }
+
+</script>

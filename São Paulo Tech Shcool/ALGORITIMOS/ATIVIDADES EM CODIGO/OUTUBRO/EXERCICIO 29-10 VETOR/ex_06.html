@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=">
+  <title>Exercicio 06</title>
+</head>
+
+<body>
+  insira o nome do Filme: <input type="text" id="inp_filme"><br><br>
+  <button onclick="cadastro()">Cadastrar</button><br><br>
+  <div id="result"></div>
+
+</body>
+
+</html>
+
+
+<script>
+  var filmes = [];
+  function cadastro() {
+    result.innerHTML = ``;
+    filmes.push(inp_filme.value);
+    inp_filme.value = '';
+
+    for (var i = 0; filmes.length > i; i++) {
+      result.innerHTML += `${i + 1} - ${filmes[i]}<br>`
+    }
+  }
+
+
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 02</title>
+</head>
+
+<body>
+  Destino de Viagem: <input type="text" id="inp_destino"><br><br>
+  <button onclick="add()">Adicionar</button>
+  <button onclick="pViagem()">Primeira viagem</button>
+  <button onclick="tViagem()">Terceira viagem</button>
+  <button onclick="uViagem()">Ultima viagem</button><br><br>
+
+  <div id="result"></div>
+</body>
+
+</html>
+
+
+<script>
+  var viagens = [];
+
+
+  function add() {
+    var viagem = inp_destino.value
+    if (viagem != "") {
+      viagens.push(viagem);
+      inp_destino.value = '';
+    }
+  }
+
+  function pViagem() {
+    if (viagens.length == 0) {
+      result.innerHTML = `Ainda não viajou`
+    } else {
+      result.innerHTML = `Primeira Viagem: <b>${viagens[0]}</b>`
+    }
+  }
+  function tViagem() {
+    if (viagens.length < 3) {
+      result.innerHTML = `Ainda não fez a terceira Viagem`;
+    } else {
+      result.innerHTML = `Terceira viagem: <b>${viagens[2]}</b>`;
+    }
+  }
+  function uViagem() {
+    if (viagens.length == 0) {
+      result.innerHTML = `Ainda não viajou`
+    } else {
+      result.innerHTML = `Ultima viagem: <b>${viagens[viagens.length - 1]}</b>`
+    }
+  }
+
+</script>
