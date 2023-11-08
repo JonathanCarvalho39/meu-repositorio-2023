@@ -35,6 +35,15 @@ alter table cliente add constraint fkIndicador
 		references cliente (cliente_id);
         
 desc cliente;
+
+-- d) Inserir dados nas tabelas, de forma que exista mais de uma venda para cada
+-- cliente, e mais de um cliente sendo indicado por outro cliente.
+insert into cliente values
+(1, 'João Silva', 'joao@email.com', null, 'São Paulo', 'Vila Mariana', 'Rua A', '123'),
+(2, 'Maria Oliveira', 'maria@email.com', 1, 'Rio de Janeiro', 'Copacabana', 'Avenida B', '456'),
+(3, 'Carlos Santos', 'carlos@email.com', 1, 'Belo Horizonte', 'Centro', 'Rua C', '789'),
+(4, 'Ana Pereira', 'ana@email.com', 2, 'Salvador', 'Barra', 'Avenida D', '101'),
+(5, 'Pedro Souza', 'pedro@email.com', null, 'Brasília', 'Asa Sul', 'Quadra E', '202');
         
 create table venda (
 	venda_id int auto_increment,
@@ -74,6 +83,29 @@ insert into produto (nome, descricao, preco) values
 
 select * from produto;
 
+-- soma 
+
+
+-- media
+select avg(preco) from produto;
+
+-- media com duas casas descimais
+
+
+-- contar campos que não sejam nulos 
+select count(preco) from produto;
+
+-- maior numero na coluna
+select max(preco) from produto;
+
+-- menor produto na coluna 
+
+
+
+-- agrupar 
+
+
+
 desc produto;
 
 create table nota_fiscal (
@@ -96,14 +128,7 @@ insert into nota_fiscal (fk_produto, fk_venda, fk_cliente, quantidade_produto, d
 	(5, 5, 5, 2, 7.50);
     
 
--- d) Inserir dados nas tabelas, de forma que exista mais de uma venda para cada
--- cliente, e mais de um cliente sendo indicado por outro cliente.
-insert into cliente values
-(1, 'João Silva', 'joao@email.com', null, 'São Paulo', 'Vila Mariana', 'Rua A', '123'),
-(2, 'Maria Oliveira', 'maria@email.com', 1, 'Rio de Janeiro', 'Copacabana', 'Avenida B', '456'),
-(3, 'Carlos Santos', 'carlos@email.com', 1, 'Belo Horizonte', 'Centro', 'Rua C', '789'),
-(4, 'Ana Pereira', 'ana@email.com', 2, 'Salvador', 'Barra', 'Avenida D', '101'),
-(5, 'Pedro Souza', 'pedro@email.com', null, 'Brasília', 'Asa Sul', 'Quadra E', '202');
+select * from nota_fiscal;
 
 -- e) Exibir todos os dados de cada tabela criada, separadamente.
 select * from cliente;
@@ -165,3 +190,29 @@ insert into cliente values
 select * from cliente 
 	left join venda 
 		on cliente_id = fk_cliente;
+        
+-- p) Exibir o valor mínimo e o valor máximo dos preços dos produtos;
+select min(preco) from produto;
+
+-- q) Exibir a soma e a média dos preços dos produtos;
+
+select sum(distinct preco) from produto;
+select round(avg(preco), 2) from produto;
+
+-- s) Exibir a soma dos preços distintos dos produtos;
+select sum(distinct preco) from produto;
+
+
+-- t) Exibir a soma dos preços dos produtos agrupado por uma determinada venda
+select sum(preco) from venda
+	join nota_fiscal
+		on venda_id = fk_venda
+	join produto as p
+		on p.produto_id = fk_produto
+			where venda.venda_id = 2
+        group by venda.venda_id;
+        
+update nota_fiscal set fk_produto = 2, fk_venda= 2 where id_nota_fical = 3;
+
+select * from nota_fiscal;
+

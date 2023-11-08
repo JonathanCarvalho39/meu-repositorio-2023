@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 14</title>
+</head>
+
+<body>
+  Nome do produto: <input type="text" id="inp_produto"><br><br>
+  Preço da Compra: <input type="number" id="inp_preco">
+
+  <button onclick="cadastro()">Cadastrar</button>
+  <button onclick="relatorio()">Relatório de estoque</button>
+
+  <div id="result"></div>
+  <div id="result2"></div>
+</body>
+
+</html>
+
+
+<script>
+  var produtos = [];
+  var precos = [];
+  var maior = 0;
+  var menor = 0;
+  var indexc = 0;
+  var indexb = 0;
+  var preco = 0
+  var produto = ''
+  var Soma = 0;
+
+  function cadastro() {
+    produto = inp_produto.value;
+    preco = Number(inp_preco.value);
+    produtos.push(produto);
+    precos.push(preco);
+    inp_preco.value = ''
+    inp_produto.value = ''
+    for (var i = 0; precos.length > i; i++) {
+      if (precos[i] < preco) {
+        maior = preco
+        indexc = precos.indexOf(preco)
+      }
+      if (precos[i] > preco) {
+        menor = preco
+        indexb = precos.indexOf(preco)
+      }
+    }
+    Soma += preco;
+  }
+
+  function relatorio() {
+
+
+    result.innerHTML = `<br>Total de produto: ${produtos.length}<br>`;
+
+    for (var i = 0; precos.length > i; i++) {
+      result.innerHTML += `<br>Produto ${i + 1}: ${produtos[i]}<br>
+
+                             Preço de compra: R$${precos[i]}. Vender por R$${precos[i] * 1.25} <br>
+                             `;
+    }
+    result2.innerHTML = `<br>Produto mais Caro:  ${produtos[indexc]} <br>
+                             Produto mais Barato:  ${produtos[indexb]}<br>
+                             Soma dos preços de compra dos produtos: ${Soma}<br>
+                             Média de valor de venda dos produtos:  ${((Soma / produtos.length) * 1.25).toFixed(2)}`
+  }
+
+</script>

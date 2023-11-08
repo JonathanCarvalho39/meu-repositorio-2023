@@ -37,8 +37,15 @@
   function validar() {
     quantidade_agua = Number(inp_agua.value);
     quantidade_coco = Number(inp_coco.value);
+    qtn_inicial_agua = Number(inp_agua.value);
+    qtn_inicial_coco = Number(inp_coco.value);
     result.innerHTML = ``;
     estoque.innerHTML = ``;
+    registro.innerHTML = ``;
+    resultado.innerHTML = ``;
+    result2.innerHTML = ``;
+    aviso.innerHTML = ``;
+    venda.innerHTML = ``;
     var validacao = 0;
 
 
@@ -88,11 +95,15 @@
 
   function encerrar() {
     result2.innerHTML = ``;
-    aviso.innerHTM = ``;
+    aviso.innerHTML = ``;
     venda.innerHTML = `Venda de Água engarrafada<br>
     Saldo de produto no estoque: ${quantidade_agua}<br>
     Quantidade de venda: ${venda_agua}<br>
-    Porcentual das vendas: ${((venda_agua / 100) * quantidade_agua).toFixed(2)}`;
+    Porcentual das vendas: ${((venda_agua * 100) / qtn_inicial_agua).toFixed(2)}%`;
+    venda.innerHTML += `<br><br>Venda de Coco fechado<br>
+    Saldo de produto no estoque: ${quantidade_coco}<br>
+    Quantidade de venda: ${venda_coco}<br>
+    Porcentual das vendas: ${((venda_coco * 100) / qtn_inicial_coco).toFixed(2)}%`;
 
   }
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 13</title>
+</head>
+
+<body>
+
+  Indique o resultado: <select id="combo">
+    <option value="v">Vitória</option>
+    <option value="e">Empate</option>
+    <option value="d">Derrota</option>
+  </select>
+  <button onclick="registro()">Registrar Jogo</button><br><br>
+  Indique qual jogo deseja saber o resultado: <input onkeyup="resultad()" type="number" id="inp_jogo">
+
+  <div id="result"></div>
+  <div id="result2"></div>
+</body>
+
+</html>
+
+
+<script>
+  var resultado = []
+  var v = 0;
+  var e = 0;
+  var d = 0;
+  var ponto = 0
+
+  function registro() {
+    var selecionar = combo.value;
+
+
+    if (selecionar == 'v') {
+      resultado.push('Vitória')
+      v += 1
+      ponto += 3
+    } else if (selecionar == 'e') {
+      resultado.push('Empate')
+      e += 1
+      ponto += 1
+    } else {
+      resultado.push('Derrota')
+      d += 1
+    }
+
+
+
+    result.innerHTML = `<br>O time teve: ${v} vitórias, ${e} empates, ${d} derrotas<br>
+
+                        Pontuação total: ${ponto} pontos
+
+                        Aproveitamento: ${(((ponto / resultado.length) * 100) / 3).toFixed(2)}% `;
+  }
+
+  function resultad() {
+
+    var jogo = Number(inp_jogo.value);
+    if (jogo == 0) {
+      result2.innerHTML = `<br>Esse jogo não existe `
+    } else if (jogo > resultado.length) {
+      result2.innerHTML = ` <br><br>Não foi cadastrado um ${jogo}º`
+    } else {
+      result2.innerHTML = ` <br><br>No ${jogo}º jogo, o time ${resultado[jogo - 1]}`
+    }
+  }
+
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 10</title>
+</head>
+
+<body>
+  Insira o nome do onibus que pega durante a semana: <input type="text" id="inp_onibus">
+  <button onclick="gravar()">
+    Gravar busão
+  </button><br><br>
+  Pesquise por um onibus que pode ter pego na semana: <input type="text" id="inp_pesquisa">
+  <button onclick="pesquisa()">
+    Pesquisar
+  </button>
+  <br><br>
+  <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+  var bus = [];
+
+  function gravar() {
+
+    if (inp_onibus.value != '') {
+      bus.push(inp_onibus.value)
+      inp_onibus.value = '';
+
+      for (var i = bus.length - 1; i >= 0; i--) {
+        result.innerHTML += `${bus[i]}<br>`
+      }
+    }
+  }
+
+  function pesquisa() {
+    if (inp_pesquisa.value != '') {
+      var qtn = 0;
+      var ordem = [];
+
+      for (var i = 0; i < bus.length; i++) {
+        if (bus[i].toUpperCase() == inp_pesquisa.value.toUpperCase()) {
+          ordem.push(i)
+        }
+      }
+
+
+      if (ordem.length == 0) {
+        result.innerHTML += `Você nunca pegou esse ônibus<br>`;
+      } else {
+        result.innerHTML += `Você já pegou essa linha ${ordem.length} vezes, nessa ordem: ${ordem}`;
+      }
+    }
+  }
+
+
+</script>
